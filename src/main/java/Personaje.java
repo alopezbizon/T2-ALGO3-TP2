@@ -1,14 +1,14 @@
 public class Personaje {
 
     private static Personaje personaje;
-    private  Lapiz lapiz;
-    private  int posicionX;
-    private  int posicionY;
+    Lapiz lapiz;
+    int posicionX;
+    int posicionY;
 
     private Personaje(){
         posicionX = 0;
         posicionY = 0;
-        lapiz = new LapizArriba;
+        lapiz = new LapizArriba();
 
     }
 
@@ -21,10 +21,10 @@ public class Personaje {
     }
 
     public void subirLapiz(){
-        lapiz = new LapizArriba;
+        lapiz = new LapizArriba();
     }
     public void bajarLapiz(){
-        lapiz = new LapizAbajo;
+        lapiz = new LapizAbajo();
     }
     public void moverDerecha(){
         posicionX++;
