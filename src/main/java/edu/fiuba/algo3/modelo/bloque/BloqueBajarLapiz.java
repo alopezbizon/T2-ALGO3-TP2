@@ -1,9 +1,12 @@
 package edu.fiuba.algo3.modelo.bloque;
 
-public class BloqueBajarLapiz extends Bloque {
-    public void accion{
-        Personaje personaje = Personaje.darPersonaje();
+import edu.fiuba.algo3.modelo.personaje.Personaje;
 
+
+public class BloqueBajarLapiz extends Bloque {
+
+    public void accion() {
+        Personaje personaje = Personaje.darPersonaje();
         personaje.bajarLapiz();
     }
 }
