@@ -28,16 +28,36 @@ public class Personaje {
         lapiz = new LapizAbajo();
     }
     public void moverDerecha(){
-        posicionX++;
+        lapiz.pintar();
+        Tablero tablero = Tablero.darTablero();
+        if(tablero.validarPosicion(posicionX+1)){
+            posicionX++;
+            lapiz.pintar();
+        }
     }
     public void moverIzquierda(){
-        posicionX--;
+        lapiz.pintar();
+        Tablero tablero = Tablero.darTablero();
+        if(tablero.validarPosicion(posicionX-1)){
+            posicionX--;
+            lapiz.pintar();
+        }
     }
     public void moverArriba(){
-        posicionY--;
+        lapiz.pintar();
+        Tablero tablero = Tablero.darTablero();
+        if(tablero.validarPosicion(posicionY-1)){
+            posicionY--;
+            lapiz.pintar();
+        }
     }
     public void moverAbajo(){
-        posicionY++;
+        lapiz.pintar();
+        Tablero tablero = Tablero.darTablero();
+        if(tablero.validarPosicion(posicionY+1)){
+            posicionY++;
+            lapiz.pintar();
+        }
     }
 
     public boolean dibujar() {
