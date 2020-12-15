@@ -7,11 +7,10 @@ public class Personaje {
     int posicionX;
     int posicionY;
 
-    private Personaje(){
+    Personaje(){
         posicionX = 0;
         posicionY = 0;
         lapiz = new LapizArriba();
-
     }
 
     public static Personaje darPersonaje(){
@@ -39,5 +38,10 @@ public class Personaje {
     }
     public void moverAbajo(){
         posicionY++;
+    }
+
+    public boolean dibujar() {
+        // TODO: ver si es necesario este return.
+        return lapiz.pintar();
     }
 }

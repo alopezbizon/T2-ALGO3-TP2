@@ -1,8 +1,9 @@
 package edu.fiuba.algo3.modelo.personaje;
 
-public class Lapiz {
-    public Lapiz(){
-    }
-    public void pintar(){
-    }
+
+public abstract class Lapiz {
+
+    public Lapiz() {}
+
+    public abstract boolean pintar();
 }
