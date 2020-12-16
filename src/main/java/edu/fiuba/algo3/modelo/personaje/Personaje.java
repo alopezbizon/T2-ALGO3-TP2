@@ -1,5 +1,8 @@
 package edu.fiuba.algo3.modelo.personaje;
 
+import edu.fiuba.algo3.modelo.Tablero;
+
+
 public class Personaje {
 
     private static Personaje personaje;
