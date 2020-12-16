@@ -10,7 +10,7 @@ public class Personaje {
     int posicionX;
     int posicionY;
 
-    Personaje(){
+    private Personaje(){
         posicionX = 0;
         posicionY = 0;
         lapiz = new LapizArriba();
