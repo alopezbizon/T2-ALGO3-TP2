@@ -22,7 +22,7 @@ public class Posicion {
         return false;
     }
 
-    public boolean esPositiva() {
+    private boolean esPositiva() {
         return ((this.x > 0) && (this.y > 0));
     }
 
