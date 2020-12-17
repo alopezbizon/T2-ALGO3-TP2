@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class BloqueMovDerechaTest {
 
     @Test
-    public void testBloqueMovAbajo_deberiaMoverElPersonajeUnaPosicionHaciaLaDerecha() {
+    public void testBloqueMovDerecha_deberiaMoverElPersonajeUnaPosicionHaciaLaDerecha() {
         Bloque bloque = new BloqueMovDerecha();
         Personaje personaje = Personaje.darPersonaje();
         Posicion posicionInicial = new Posicion(5, 5);
