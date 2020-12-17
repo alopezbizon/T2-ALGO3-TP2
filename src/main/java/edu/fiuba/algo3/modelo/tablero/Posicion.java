@@ -23,10 +23,6 @@ public class Posicion {
     }
 
     public boolean esPositiva() {
-        System.out.println(this.x);
-        System.out.println(this.x > 0);
-        System.out.println(this.y);
-        System.out.println(this.y > 0);
         return ((this.x > 0) && (this.y > 0));
     }
 
