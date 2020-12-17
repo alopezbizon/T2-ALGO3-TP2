@@ -25,46 +25,12 @@ public class Personaje {
         this.lapiz = new LapizAbajo();
     }
 
-    public void moverDerecha() {
+    public void mover(Posicion unaPosicion) {
         Tablero tablero = Tablero.darTablero();
-        Posicion otraPosicion = new Posicion(1,0);
-        otraPosicion.sumar(this.posicion);
+        unaPosicion.sumar(this.posicion);
 
-        if (tablero.validarPosicion(otraPosicion)) {
-            this.posicion = otraPosicion;
-            this.lapiz.pintar();
-        }
-    }
-
-    public void moverIzquierda(){
-        Tablero tablero = Tablero.darTablero();
-        Posicion otraPosicion = new Posicion(-1,0);
-        otraPosicion.sumar(this.posicion);
-
-        if (tablero.validarPosicion(otraPosicion)) {
-            this.posicion = otraPosicion;
-            this.lapiz.pintar();
-        }
-    }
-
-    public void moverArriba(){
-        Tablero tablero = Tablero.darTablero();
-        Posicion otraPosicion = new Posicion(0,1);
-        otraPosicion.sumar(this.posicion);
-
-        if (tablero.validarPosicion(otraPosicion)) {
-            this.posicion = otraPosicion;
-            this.lapiz.pintar();
-        }
-    }
-
-    public void moverAbajo(){
-        Tablero tablero = Tablero.darTablero();
-        Posicion otraPosicion = new Posicion(0,-1);
-        otraPosicion.sumar(this.posicion);
-
-        if (tablero.validarPosicion(otraPosicion)) {
-            this.posicion = otraPosicion;
+        if (tablero.validarPosicion(unaPosicion)) {
+            this.posicion = unaPosicion;
             this.lapiz.pintar();
         }
     }
@@ -72,5 +38,13 @@ public class Personaje {
     public boolean dibujar() {
         // TODO: ver si es necesario este return.
         return lapiz.pintar();
+    }
+
+    public void inicializarPosicion(Posicion unaPosicion) {
+        this.posicion = unaPosicion;
+    }
+
+    public Posicion obtenerPosicion() {
+        return this.posicion;
     }
 }
