@@ -1,7 +1,4 @@
-package edu.fiuba.algo3.modelo.bloque;
-
-import edu.fiuba.algo3.modelo.personaje.Personaje;
-import edu.fiuba.algo3.modelo.tablero.Posicion;
+package edu.fiuba.algo3.modelo;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -11,13 +8,12 @@ public class BloqueMovIzquierdaTest {
 
     @Test
     public void testBloqueMovIzquierda_deberiaMoverElPersonajeUnaPosicionHaciaLaIzquierda() {
-        Bloque bloque = new BloqueMovIzquierda();
-        Personaje personaje = Personaje.darPersonaje();
         Posicion posicionInicial = new Posicion(5, 5);
         Posicion posicionFinal = new Posicion(4,5);
+        Personaje personaje = new Personaje(posicionInicial);
+        Bloque bloque = new BloqueMovIzquierda();
 
-        personaje.inicializarPosicion(posicionInicial);
-        bloque.accion();
+        bloque.accion(personaje);
 
         assertTrue(personaje.obtenerPosicion().esIgual(posicionFinal));
     }

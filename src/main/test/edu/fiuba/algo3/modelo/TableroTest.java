@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.modelo.tablero;
+package edu.fiuba.algo3.modelo;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -9,7 +9,7 @@ public class TableroTest {
 
     @Test
     public void testTableroValidarPosicion_deberiaDevolverTrueSiLaPosicionEstaDentroDeSuDimension() {
-        Tablero tablero = Tablero.darTablero();
+        Tablero tablero = new Tablero();
         Posicion posicion = new Posicion(1,1);
 
         assertTrue(tablero.validarPosicion(posicion));
@@ -17,7 +17,7 @@ public class TableroTest {
 
     @Test
     public void testTableroValidarPosicion_deberiaDevolverFalseSiLaPosicionNoEstaDentroDeSuDimensionEnXeY() {
-        Tablero tablero = Tablero.darTablero();
+        Tablero tablero = new Tablero();
         Posicion posicion1 = new Posicion(-1,-1);
         Posicion posicion2 = new Posicion(15,15);
 
@@ -27,7 +27,7 @@ public class TableroTest {
 
     @Test
     public void testTableroValidarPosicion_deberiaDevolverFalseSiLaPosicionNoEstaDentroDeSuDimensionEnX() {
-        Tablero tablero = Tablero.darTablero();
+        Tablero tablero = new Tablero();
         Posicion posicion1 = new Posicion(-1,1);
         Posicion posicion2 = new Posicion(15,14);
 
@@ -37,7 +37,7 @@ public class TableroTest {
 
     @Test
     public void testTableroValidarPosicion_deberiaDevolverFalseSiLaPosicionNoEstaDentroDeSuDimensionEnY() {
-        Tablero tablero = Tablero.darTablero();
+        Tablero tablero = new Tablero();
         Posicion posicion1 = new Posicion(1,-1);
         Posicion posicion2 = new Posicion(14,15);
 
