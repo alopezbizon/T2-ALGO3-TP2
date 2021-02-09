@@ -1,5 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
-public class Bloque {
-    public void accion(Personaje personaje){}
+
+public abstract class Bloque {
+
+    public abstract void accion(Personaje personaje);
 }
