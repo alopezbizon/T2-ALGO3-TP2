@@ -1,36 +1,37 @@
 package edu.fiuba.algo3.modelo.bloque;
 
 import edu.fiuba.algo3.modelo.personaje.Personaje;
-import edu.fiuba.algo3.modelo.tablero.Posicion;
-import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.Test;
+import static org.mockito.Mockito.*;
 
 
 public class BloqueSubirLapizTest {
 
     @Test
     public void testBloqueSubirLapiz_deberiaMantenerSubidoElLapizDelPersonajeRecienCreado() {
-        Posicion posicionInicial = new Posicion(0,0);
-        Personaje personaje = new Personaje(posicionInicial);
+        Personaje personajeMock = mock(Personaje.class);
         Bloque bloque = new BloqueSubirLapiz();
 
-        bloque.accion(personaje);
+        bloque.accion(personajeMock);
 
-        assertFalse(personaje.dibujar());
+        // TODO: ¿Realmente verifica que el lápiz está arriba?
+        verify(personajeMock,times(1)).subirLapiz();
+        verify(personajeMock,never()).bajarLapiz();
     }
 
     @Test
     public void testBloqueSubirLapiz_deberiaSubirElLapizDelPersonajeCuandoLoTieneBajo() {
-        Posicion posicionInicial = new Posicion(0,0);
-        Personaje personaje = new Personaje(posicionInicial);
+        Personaje personajeMock = mock(Personaje.class);
         Bloque bloque = new BloqueSubirLapiz();
 
-        personaje.bajarLapiz();
-        assertTrue(personaje.dibujar());
-        bloque.accion(personaje);
+        personajeMock.bajarLapiz();
+        verify(personajeMock,never()).subirLapiz();
+        verify(personajeMock,times(1)).bajarLapiz();
+        bloque.accion(personajeMock);
 
-        assertFalse(personaje.dibujar());
+        // TODO: ¿Realmente verifica que el lápiz está abajo?
+        verify(personajeMock,times(1)).subirLapiz();
+        verify(personajeMock,times(1)).bajarLapiz();
     }
 }

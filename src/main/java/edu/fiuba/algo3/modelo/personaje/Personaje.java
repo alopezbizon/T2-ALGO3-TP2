@@ -25,11 +25,6 @@ public class Personaje {
         this.lapiz.pintar();
     }
 
-    public boolean dibujar() {
-        // TODO: ver si es necesario este return.
-        return lapiz.pintar();
-    }
-
     public Posicion obtenerPosicion() {
         return this.posicion;
     }

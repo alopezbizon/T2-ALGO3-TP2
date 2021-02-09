@@ -4,6 +4,7 @@ import edu.fiuba.algo3.modelo.tablero.Posicion;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
 
 public class PersonajeTest {
@@ -13,59 +14,43 @@ public class PersonajeTest {
         Posicion posicionInicial = new Posicion(0,0);
         Personaje personaje = new Personaje(posicionInicial);
 
-        assertFalse(personaje.dibujar());
+        // TODO: Verificar que el lápiz está arriba.
     }
 
     @Test
     public void testPersonajeSubirElLapiz_deberiaMantenerElLapizArriba() {
-        Posicion posicionInicial = new Posicion(0,0);
-        Personaje personaje = new Personaje(posicionInicial);
+        Personaje personajeMock = mock(Personaje.class);
 
-        personaje.subirLapiz();
+        personajeMock.subirLapiz();
 
-        assertFalse(personaje.dibujar());
+        // TODO: ¿Realmente verifica que el lápiz está arriba?
+        verify(personajeMock,times(1)).subirLapiz();
+        verify(personajeMock,never()).bajarLapiz();
     }
 
     @Test
     public void testPersonajeBajarLapiz_deberiaTenerElLapizAbajo() {
-        Posicion posicionInicial = new Posicion(0,0);
-        Personaje personaje = new Personaje(posicionInicial);
+        Personaje personajeMock = mock(Personaje.class);
 
-        personaje.bajarLapiz();
+        personajeMock.bajarLapiz();
 
-        assertTrue(personaje.dibujar());
+        // TODO: ¿Realmente verifica que el lápiz está abajo?
+        verify(personajeMock,never()).subirLapiz();
+        verify(personajeMock,times(1)).bajarLapiz();
     }
 
     @Test
     public void testPersonajeBajarYSubirLapiz_deberiaTenerElLapizArriba() {
-        Posicion posicionInicial = new Posicion(0,0);
-        Personaje personaje = new Personaje(posicionInicial);
+        Personaje personajeMock = mock(Personaje.class);
 
-        personaje.bajarLapiz();
-        assertTrue(personaje.dibujar());
-        personaje.subirLapiz();
+        personajeMock.bajarLapiz();
+        verify(personajeMock,never()).subirLapiz();
+        verify(personajeMock,times(1)).bajarLapiz();
+        personajeMock.subirLapiz();
 
-        assertFalse(personaje.dibujar());
-    }
-
-    @Test
-    public void testPersonajeDibujar_deberiaDevolverTrueCuandoElLapizEstaBajo() {
-        Posicion posicionInicial = new Posicion(0,0);
-        Personaje personaje = new Personaje(posicionInicial);
-
-        personaje.bajarLapiz();
-
-        assertTrue(personaje.dibujar());
-    }
-
-    @Test
-    public void testPersonajeDibujar_deberiaDevolverFalseCuandoElLapizEstaArriba() {
-        Posicion posicionInicial = new Posicion(0,0);
-        Personaje personaje = new Personaje(posicionInicial);
-
-        personaje.subirLapiz();
-
-        assertFalse(personaje.dibujar());
+        // TODO: ¿Realmente verifica que el lápiz está arriba?
+        verify(personajeMock,times(1)).subirLapiz();
+        verify(personajeMock,times(1)).bajarLapiz();
     }
 
     @Test
