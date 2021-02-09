@@ -11,13 +11,12 @@ public class BloqueMovArribaTest {
 
     @Test
     public void testBloqueMovArriba_deberiaMoverElPersonajeUnaPosicionHaciaArriba() {
-        Bloque bloque = new BloqueMovArriba();
-        Personaje personaje = Personaje.darPersonaje();
         Posicion posicionInicial = new Posicion(5, 5);
         Posicion posicionFinal = new Posicion(5,6);
+        Personaje personaje = new Personaje(posicionInicial);
+        Bloque bloque = new BloqueMovArriba();
 
-        personaje.inicializarPosicion(posicionInicial);
-        bloque.accion();
+        bloque.accion(personaje);
 
         assertTrue(personaje.obtenerPosicion().esIgual(posicionFinal));
     }

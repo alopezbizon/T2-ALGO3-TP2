@@ -5,8 +5,7 @@ import edu.fiuba.algo3.modelo.personaje.Personaje;
 
 public class BloqueSubirLapiz extends Bloque {
 
-    public void accion() {
-        Personaje personaje = Personaje.darPersonaje();
+    public void accion(Personaje personaje) {
         personaje.subirLapiz();
     }
 }
