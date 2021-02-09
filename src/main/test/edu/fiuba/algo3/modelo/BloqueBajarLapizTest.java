@@ -1,6 +1,8 @@
-package edu.fiuba.algo3.modelo.bloque;
+package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.personaje.Personaje;
+import edu.fiuba.algo3.modelo.Bloque;
+import edu.fiuba.algo3.modelo.BloqueBajarLapiz;
+import edu.fiuba.algo3.modelo.Personaje;
 
 import org.junit.jupiter.api.Test;
 import static org.mockito.Mockito.*;

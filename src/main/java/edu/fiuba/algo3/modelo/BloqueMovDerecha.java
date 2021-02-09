@@ -1,7 +1,4 @@
-package edu.fiuba.algo3.modelo.bloque;
-
-import edu.fiuba.algo3.modelo.personaje.Personaje;
-import edu.fiuba.algo3.modelo.tablero.Posicion;
+package edu.fiuba.algo3.modelo;
 
 
 public class BloqueMovDerecha extends Bloque{

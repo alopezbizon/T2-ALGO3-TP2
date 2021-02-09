@@ -1,6 +1,4 @@
-package edu.fiuba.algo3.modelo.personaje;
-
-import edu.fiuba.algo3.modelo.tablero.Posicion;
+package edu.fiuba.algo3.modelo;
 
 
 public class Personaje {
