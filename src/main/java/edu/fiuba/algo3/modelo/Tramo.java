@@ -21,4 +21,8 @@ public class Tramo {
     public Posicion obtenerFin() {
         return this.fin;
     }
+
+    public boolean esIgual(Tramo tramo) {
+        return (this.inicio.esIgual(tramo.obtenerInicio()) && this.fin.esIgual(tramo.obtenerFin()));
+    }
 }

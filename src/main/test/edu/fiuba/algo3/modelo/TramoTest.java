@@ -36,4 +36,20 @@ public class TramoTest {
 
         assertTrue(tramo.obtenerFin().esIgual(fin));
     }
+
+    @Test
+    public void testTramoEsIgualAOtroTramo_deberiaDevolverTrueSiSonIguales() throws Exception{
+        Tramo tramo = new Tramo(new Posicion(0,0), new Posicion(1,0));
+        Tramo otroTramo = new Tramo(new Posicion(0,0), new Posicion(1,0));
+
+        assertTrue(tramo.esIgual(otroTramo));
+    }
+
+    @Test
+    public void testTramoEsIgualAOtroTramo_deberiaDevolverFalseSiNoSonIguales() throws Exception{
+        Tramo tramo = new Tramo(new Posicion(0,0), new Posicion(1,0));
+        Tramo otroTramo = new Tramo(new Posicion(0,0), new Posicion(0,1));
+
+        assertFalse(tramo.esIgual(otroTramo));
+    }
 }
