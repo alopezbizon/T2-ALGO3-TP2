@@ -15,17 +15,6 @@ public class Posicion {
         return (this.x.equals(posicion.x) && this.y.equals(posicion.y));
     }
 
-    public boolean esMenor(Posicion posicion) {
-        if (this.esPositiva()) {
-            return ((this.x < posicion.x) && (this.y < posicion.y));
-        }
-        return false;
-    }
-
-    private boolean esPositiva() {
-        return ((this.x > 0) && (this.y > 0));
-    }
-
     public void sumar(Posicion posicion) {
         this.x += posicion.x;
         this.y += posicion.y;
