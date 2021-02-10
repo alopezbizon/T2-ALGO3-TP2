@@ -26,30 +26,6 @@ public class PosicionTest {
     }
 
     @Test
-    public void testPosicionEsMenorAOtraPosicion_deberiaDevolverTrueSiXeYsonMenores() {
-        Posicion posicion = new Posicion(1,1);
-        Posicion otraPosicion = new Posicion(5,5);
-
-        assertTrue(posicion.esMenor(otraPosicion));
-    }
-
-    @Test
-    public void testPosicionEsMenorAOtraPosicion_deberiaDevolverFalseSiXeYsonIguales() {
-        Posicion posicion = new Posicion(5,5);
-        Posicion otraPosicion = new Posicion(5,5);
-
-        assertFalse(posicion.esMenor(otraPosicion));
-    }
-
-    @Test
-    public void testPosicionEsMenorAOtraPosicion_deberiaDevolverFalseSiXeYNoSonMenores() {
-        Posicion posicion = new Posicion(5,5);
-        Posicion otraPosicion = new Posicion(1,1);
-
-        assertFalse(posicion.esMenor(otraPosicion));
-    }
-
-    @Test
     public void testPosicionSumarOtraPosicion_deberiaSumarXconXeYconY() {
         Posicion posicion = new Posicion(1,2);
         Posicion otraPosicion = new Posicion(1,-1);
