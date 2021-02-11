@@ -19,4 +19,8 @@ public class Posicion {
         this.x += posicion.x;
         this.y += posicion.y;
     }
+
+    public Posicion copiar() {
+        return new Posicion(this.x, this.y);
+    }
 }

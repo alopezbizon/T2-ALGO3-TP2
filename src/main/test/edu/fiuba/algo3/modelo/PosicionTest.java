@@ -1,8 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 public class PosicionTest {
@@ -34,5 +33,15 @@ public class PosicionTest {
         posicion.sumar(otraPosicion);
 
         assertTrue(posicion.esIgual(sumaPosiciones));
+    }
+
+    @Test
+    public void testPosicionCopiar_deberiaSumarXconXeYconY() {
+        Posicion posicion = new Posicion(1,1);
+
+        Posicion otraPosicion = posicion.copiar();
+
+        assertTrue(posicion.esIgual(otraPosicion));
+        assertFalse(posicion == otraPosicion);
     }
 }
