@@ -23,6 +23,8 @@ public class Tramo {
     }
 
     public boolean esIgual(Tramo tramo) {
-        return (this.inicio.esIgual(tramo.obtenerInicio()) && this.fin.esIgual(tramo.obtenerFin()));
+        boolean esIgual = this.inicio.esIgual(tramo.obtenerInicio()) && this.fin.esIgual(tramo.obtenerFin());
+        boolean esLaInversion = this.inicio.esIgual(tramo.obtenerFin()) && this.fin.esIgual(tramo.obtenerInicio());
+        return (esIgual || esLaInversion);
     }
 }
