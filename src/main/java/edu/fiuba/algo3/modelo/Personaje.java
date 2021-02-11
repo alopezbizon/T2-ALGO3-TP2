@@ -18,9 +18,11 @@ public class Personaje {
         this.lapiz = new LapizAbajo();
     }
 
-    public void mover(Posicion unaPosicion) {
-        this.posicion.sumar(unaPosicion);
-        this.lapiz.pintar();
+    public void mover(Posicion posicion, Dibujo dibujo) {
+        Posicion unaPosicion = this.posicion.copiar();
+        this.posicion.sumar(posicion);
+        Posicion otraPosicion = this.posicion.copiar();
+        this.lapiz.pintar(unaPosicion, otraPosicion, dibujo);
     }
 
     public Posicion obtenerPosicion() {

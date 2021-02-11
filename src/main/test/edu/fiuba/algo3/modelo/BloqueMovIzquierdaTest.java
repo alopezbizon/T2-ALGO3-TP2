@@ -12,8 +12,9 @@ public class BloqueMovIzquierdaTest {
         Posicion posicionFinal = new Posicion(4,5);
         Personaje personaje = new Personaje(posicionInicial);
         Bloque bloque = new BloqueMovIzquierda();
+        Dibujo dibujo = new Dibujo();
 
-        bloque.accion(personaje);
+        bloque.accion(personaje, dibujo);
 
         assertTrue(personaje.obtenerPosicion().esIgual(posicionFinal));
     }

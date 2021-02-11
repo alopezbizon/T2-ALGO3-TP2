@@ -14,8 +14,9 @@ public class BloqueBajarLapizTest {
     public void testBloqueBajarLapiz_deberiaBajarElLapizDelPersonajeRecienCreado() {
         Personaje personajeMock = mock(Personaje.class);
         Bloque bloque = new BloqueBajarLapiz();
+        Dibujo dibujo = new Dibujo();
 
-        bloque.accion(personajeMock);
+        bloque.accion(personajeMock, dibujo);
 
         // TODO: ¿Realmente verifica que el lápiz está abajo?
         verify(personajeMock,never()).subirLapiz();
@@ -26,11 +27,12 @@ public class BloqueBajarLapizTest {
     public void testBloqueBajarLapiz_deberiaBajarElLapizDelPersonajeCuandoLoTieneArriba() {
         Personaje personajeMock = mock(Personaje.class);
         Bloque bloque = new BloqueBajarLapiz();
+        Dibujo dibujo = new Dibujo();
 
         personajeMock.subirLapiz();
         verify(personajeMock,times(1)).subirLapiz();
         verify(personajeMock,never()).bajarLapiz();
-        bloque.accion(personajeMock);
+        bloque.accion(personajeMock, dibujo);
 
         // TODO: ¿Realmente verifica que el lápiz está abajo?
         verify(personajeMock,times(1)).subirLapiz();

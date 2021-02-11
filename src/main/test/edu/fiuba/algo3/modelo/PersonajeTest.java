@@ -1,8 +1,5 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.Personaje;
-import edu.fiuba.algo3.modelo.Posicion;
-
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -60,9 +57,10 @@ public class PersonajeTest {
         Posicion posicionFinal = new Posicion(6,5);
         Posicion posicionParaMovimiento = new Posicion(1,0);
         Personaje personaje = new Personaje(posicionInicial);
+        Dibujo dibujo = new Dibujo();
 
         assertTrue(personaje.obtenerPosicion().esIgual(posicionInicial));
-        personaje.mover(posicionParaMovimiento);
+        personaje.mover(posicionParaMovimiento, dibujo);
 
         assertTrue(personaje.obtenerPosicion().esIgual(posicionFinal));
     }
@@ -73,9 +71,10 @@ public class PersonajeTest {
         Posicion posicionFinal = new Posicion(4,5);
         Posicion posicionParaMovimiento = new Posicion(-1,0);
         Personaje personaje = new Personaje(posicionInicial);
+        Dibujo dibujo = new Dibujo();
 
         assertTrue(personaje.obtenerPosicion().esIgual(posicionInicial));
-        personaje.mover(posicionParaMovimiento);
+        personaje.mover(posicionParaMovimiento, dibujo);
 
         assertTrue(personaje.obtenerPosicion().esIgual(posicionFinal));
     }
@@ -86,9 +85,10 @@ public class PersonajeTest {
         Posicion posicionFinal = new Posicion(5,6);
         Posicion posicionParaMovimiento = new Posicion(0,1);
         Personaje personaje = new Personaje(posicionInicial);
+        Dibujo dibujo = new Dibujo();
 
         assertTrue(personaje.obtenerPosicion().esIgual(posicionInicial));
-        personaje.mover(posicionParaMovimiento);
+        personaje.mover(posicionParaMovimiento, dibujo);
 
         assertTrue(personaje.obtenerPosicion().esIgual(posicionFinal));
     }
@@ -99,9 +99,10 @@ public class PersonajeTest {
         Posicion posicionFinal = new Posicion(5,4);
         Posicion posicionParaMovimiento = new Posicion(0,-1);
         Personaje personaje = new Personaje(posicionInicial);
+        Dibujo dibujo = new Dibujo();
 
         assertTrue(personaje.obtenerPosicion().esIgual(posicionInicial));
-        personaje.mover(posicionParaMovimiento);
+        personaje.mover(posicionParaMovimiento, dibujo);
 
         assertTrue(personaje.obtenerPosicion().esIgual(posicionFinal));
     }
@@ -119,12 +120,13 @@ public class PersonajeTest {
         Posicion posicionInicial = new Posicion(5,5);
         Posicion posicionFinal = new Posicion(7,7);
         Personaje personaje = new Personaje(posicionInicial);
+        Dibujo dibujo = new Dibujo();
 
         assertTrue(personaje.obtenerPosicion().esIgual(posicionInicial));
-        personaje.mover(new Posicion(1,0));
-        personaje.mover(new Posicion(1,0));
-        personaje.mover(new Posicion(0,1));
-        personaje.mover(new Posicion(0,1));
+        personaje.mover(new Posicion(1,0), dibujo);
+        personaje.mover(new Posicion(1,0), dibujo);
+        personaje.mover(new Posicion(0,1), dibujo);
+        personaje.mover(new Posicion(0,1), dibujo);
 
         assertTrue(personaje.obtenerPosicion().esIgual(posicionFinal));
     }

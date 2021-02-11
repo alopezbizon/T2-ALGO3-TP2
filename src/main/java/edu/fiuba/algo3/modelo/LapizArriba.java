@@ -5,8 +5,7 @@ public class LapizArriba extends Lapiz{
 
     public LapizArriba() {}
 
-    public boolean pintar() {
-        // TODO: Refactor pintar cuando trabaje con un Tablero.
+    public boolean pintar(Posicion inicio, Posicion fin, Dibujo dibujo) {
         return false;
     }
 }

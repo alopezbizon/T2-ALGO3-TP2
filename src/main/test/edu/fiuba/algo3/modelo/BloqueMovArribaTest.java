@@ -12,8 +12,9 @@ public class BloqueMovArribaTest {
         Posicion posicionFinal = new Posicion(5,6);
         Personaje personaje = new Personaje(posicionInicial);
         Bloque bloque = new BloqueMovArriba();
+        Dibujo dibujo = new Dibujo();
 
-        bloque.accion(personaje);
+        bloque.accion(personaje, dibujo);
 
         assertTrue(personaje.obtenerPosicion().esIgual(posicionFinal));
     }

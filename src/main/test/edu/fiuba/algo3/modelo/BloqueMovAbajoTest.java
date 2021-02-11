@@ -12,8 +12,9 @@ public class BloqueMovAbajoTest {
         Posicion posicionFinal = new Posicion(5,4);
         Personaje personaje = new Personaje(posicionInicial);
         Bloque bloque = new BloqueMovAbajo();
+        Dibujo dibujo = new Dibujo();
 
-        bloque.accion(personaje);
+        bloque.accion(personaje, dibujo);
 
         assertTrue(personaje.obtenerPosicion().esIgual(posicionFinal));
     }
