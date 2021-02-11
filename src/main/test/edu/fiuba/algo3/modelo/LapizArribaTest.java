@@ -7,10 +7,15 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 public class LapizArribaTest {
 
     @Test
-    public void testLapizAbajo_deberiaNoPintar() {
+    public void testLapizArriba_deberiaNoPintar() throws Exception {
+        Posicion inicio = new Posicion(0, 0);
+        Posicion fin = new Posicion(1, 0);
+        Tramo tramo = new Tramo(inicio, fin);
+        Dibujo dibujo = new Dibujo();
         LapizArriba lapiz = new LapizArriba();
 
-        // TODO
-        //assertFalse(lapiz.pintar());
+        lapiz.pintar(inicio, fin, dibujo);
+
+        assertFalse(dibujo.contieneTramo(tramo));
     }
 }
