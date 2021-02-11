@@ -4,5 +4,5 @@ public class BloqueRepetirDosVeces extends BloqueRepetir{
 
 	public BloqueRepetirDosVeces() {
 		cantidadRepeticiones = 2;
-	}
+	}	
 }
