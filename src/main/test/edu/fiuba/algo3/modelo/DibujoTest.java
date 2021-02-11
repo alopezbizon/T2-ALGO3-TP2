@@ -50,4 +50,29 @@ public class DibujoTest {
         tramos.forEach(tramo -> assertTrue(
                 otrosTramos.stream().anyMatch(unTramo -> unTramo.esIgual(tramo))));
     }
+
+    @Test
+    public void testDibujoContieneTramo_deberiaDevolverTrueSiLoContiene() throws Exception {
+        Posicion inicio = new Posicion(0,0);
+        Posicion fin = new Posicion(1,0);
+        Tramo tramo = new Tramo(inicio, fin);
+        Dibujo dibujo = new Dibujo();
+
+        dibujo.crearTramo(inicio, fin);
+
+        assertTrue(dibujo.contieneTramo(tramo));
+    }
+
+    @Test
+    public void testDibujoContieneTramo_deberiaDevolverFalseSiNoLoContiene() throws Exception {
+        Posicion inicio = new Posicion(0,0);
+        Posicion fin = new Posicion(1,0);
+        Posicion otroFin = new Posicion(0,1);
+        Tramo tramo = new Tramo(inicio, otroFin);
+        Dibujo dibujo = new Dibujo();
+
+        dibujo.crearTramo(inicio, fin);
+
+        assertFalse(dibujo.contieneTramo(tramo));
+    }
 }

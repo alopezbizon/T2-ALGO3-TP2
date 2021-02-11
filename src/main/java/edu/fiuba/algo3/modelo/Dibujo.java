@@ -13,7 +13,7 @@ public class Dibujo {
     public void crearTramo(Posicion inicio, Posicion fin) throws TramoInvalidoPosicionDeInicioYFinIgualesException {
         try {
             Tramo tramo = new Tramo(inicio, fin);
-            if (tramos.stream().noneMatch(unTramo -> unTramo.esIgual(tramo))) {
+            if (!this.contieneTramo(tramo)) {
                 this.tramos.add(tramo);
             }
         } catch (TramoInvalidoPosicionDeInicioYFinIgualesException e) {
@@ -23,5 +23,9 @@ public class Dibujo {
 
     public List<Tramo> obtenerTramos() {
         return this.tramos;
+    }
+
+    public boolean contieneTramo(Tramo tramo) {
+        return (this.tramos.stream().anyMatch(unTramo -> unTramo.esIgual(tramo)));
     }
 }
