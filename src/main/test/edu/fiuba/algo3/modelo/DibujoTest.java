@@ -34,21 +34,24 @@ public class DibujoTest {
     @Test
     public void testDibujoObtenerTramos_deberiaDevolverUnaListaConLosTramosCreados() throws Exception {
         Dibujo dibujo = new Dibujo();
-        List<Tramo> otrosTramos = new ArrayList<>(List.of(
+        List<Tramo> tramos = new ArrayList<>(List.of(
                 new Tramo(new Posicion(0,0), new Posicion(1,0)),
                 new Tramo(new Posicion(0,0), new Posicion(0,1)),
                 new Tramo(new Posicion(0,0), new Posicion(-1,0)),
                 new Tramo(new Posicion(0,0), new Posicion(0,-1))
         ));
 
+        assertTrue(dibujo.obtenerTramos().isEmpty());
         dibujo.crearTramo(new Posicion(0,0), new Posicion(1,0));
         dibujo.crearTramo(new Posicion(0,0), new Posicion(0,1));
         dibujo.crearTramo(new Posicion(0,0), new Posicion(-1,0));
         dibujo.crearTramo(new Posicion(0,0), new Posicion(0,-1));
-        List<Tramo> tramos = dibujo.obtenerTramos();
+        assertFalse(dibujo.obtenerTramos().isEmpty());
 
-        tramos.forEach(tramo -> assertTrue(
-                otrosTramos.stream().anyMatch(unTramo -> unTramo.esIgual(tramo))));
+        List<Tramo> tramosCreados = dibujo.obtenerTramos();
+        tramosCreados.forEach(tramo -> assertTrue(
+                tramos.stream().anyMatch(unTramo -> unTramo.esIgual(tramo))));
+        assertEquals(tramosCreados.size(), tramos.size());
     }
 
     @Test
