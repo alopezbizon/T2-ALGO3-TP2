@@ -1,5 +1,8 @@
 @startuml
 title Se agregan BloqueRepetirDosVeces con: BloqueMovDerecha, BloqueMovArriba
+
+actor User
+activate User
 User -> BloqueRepetirDosVeces : agregarBloque(BloqueMovDerecha)
 User -> BloqueRepetirDosVeces : agregarBloque(BloqueMovArriba)
 
@@ -8,14 +11,18 @@ User -> BloqueRepetirDosVeces : accion(Personaje, Dibujo)
 loop 2 times
 BloqueRepetirDosVeces -> BloqueMovDerecha : accion(Personaje, Dibujo)
 BloqueMovDerecha-> Personaje : mover(Posicion(1, 0)), Dibujo)
+
 Personaje -> Posicion : sumar(posInicial)
 Personaje<-- Posicion : posFinal
-Personaje -> Lapiz : pintar(posInicial, posFinal, Dibujo)
+Personaje -> LapizArriba : pintar(posInicial, posFinal, Dibujo)
 
 BloqueRepetirDosVeces -> BloqueMovArriba : accion(Personaje, Dibujo)
 BloqueMovArriba -> Personaje : mover(Posicion(0, 1)), Dibujo)
+
 Personaje -> Posicion : sumar(posInicial)
 Personaje<-- Posicion : posFinal
-Personaje -> Lapiz : pintar(posInicial, posFinal, Dibujo)
+Personaje -> LapizArriba : pintar(posInicial, posFinal, Dibujo)
 end
+
+hide footbox
 @enduml

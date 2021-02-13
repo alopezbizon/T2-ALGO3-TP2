@@ -1,5 +1,8 @@
 @startuml
 title Se agregan BloqueInversor con: BloqueSubirLapiz, BloqueMovArriba
+
+actor User
+activate User
 User -> BloqueInversor: agregarBloque(BloqueSubirLapiz)
 User -> BloqueInversor: agregarBloque(BloqueMovArriba)
 
@@ -10,8 +13,11 @@ BloqueSubirLapiz-> Personaje : bajarLapiz()
 
 BloqueInversor-> BloqueMovArriba:accionInversa(Personaje, Dibujo)
 BloqueMovArriba -> Personaje : mover(Posicion(0,-1)), Dibujo)
+
 Personaje -> Posicion : sumar(posInicial)
 Personaje<-- Posicion : posFinal
-Personaje -> Lapiz : pintar(posInicial, posFinal, Dibujo)
-Lapiz -> Dibujo : crearTramo(posInicio, posFin);
+Personaje -> LapizAbajo : pintar(posInicial, posFinal, Dibujo)
+LapizAbajo -> Dibujo : crearTramo(posInicio, posFin);
+
+hide footbox
 @enduml
