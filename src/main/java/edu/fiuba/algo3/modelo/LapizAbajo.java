@@ -9,6 +9,8 @@ public class LapizAbajo extends Lapiz {
         try {
             dibujo.crearTramo(inicio, fin);
         } catch (TramoInvalidoPosicionDeInicioYFinIgualesException e) {
+        	e.printStackTrace();
+        	// Si es necesario, elevar a la vista
         }
     }
 }
