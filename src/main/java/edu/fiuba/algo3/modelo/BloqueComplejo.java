@@ -16,5 +16,9 @@ public abstract class BloqueComplejo extends Bloque{
 		this.ejecutar(personaje, dibujo);
 		
 	}
+	
+	public int tamanio() {
+		return bloques.size();
+	}
 
 }
