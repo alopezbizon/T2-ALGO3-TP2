@@ -14,7 +14,7 @@ public class BloqueInversorTest {
 	private Posicion posicionFinal;
 	
 	@BeforeEach
-	void init() {
+	public void init() {
 		bloqueInversor = new BloqueInversor();
 		posicionInicial = new Posicion(0,0);
 		posicionFinal = new Posicion(0,0);
@@ -22,7 +22,7 @@ public class BloqueInversorTest {
 	}
 	
 	@Test
-	void AgregoConMovDerechaDebeEjecutarseIzquierda() {
+	public void AgregoConMovDerechaDebeEjecutarseIzquierda() {
 		
 		posicionFinal.sumar(new Posicion(-1,0));
 		
@@ -34,7 +34,7 @@ public class BloqueInversorTest {
 	}
 	
 	@Test
-	void AgregoConMovIzquierdaDebeEjecutarseDerecha() {
+	public void AgregoConMovIzquierdaDebeEjecutarseDerecha() {
 		
 		posicionFinal.sumar(new Posicion(1,0));
 		
@@ -46,7 +46,7 @@ public class BloqueInversorTest {
 	}
 	
 	@Test
-	void AgregoConMovAbajoDebeEjecutarseArriba() {
+	public void AgregoConMovAbajoDebeEjecutarseArriba() {
 		
 		posicionFinal.sumar(new Posicion(0,1));
 		
@@ -58,7 +58,7 @@ public class BloqueInversorTest {
 	}
 	
 	@Test
-	void AgregoConMovArribaDebeEjecutarseAbajo() {
+	public void AgregoConMovArribaDebeEjecutarseAbajo() {
 		
 		posicionFinal.sumar(new Posicion(0,-1));
 		
@@ -70,7 +70,7 @@ public class BloqueInversorTest {
 	}
 	
 	@Test
-	void AgregoConMovArribaYDerechaDebeEjecutarseOpuesto() {
+	public void AgregoConMovArribaYDerechaDebeEjecutarseOpuesto() {
 		
 		posicionFinal.sumar(new Posicion(-1,-1));
 		
@@ -83,7 +83,7 @@ public class BloqueInversorTest {
 	}
 	
 	@Test
-	void AgregoConMovArribaYDerechaEnBloqueDeRepetirDosVecesDebeEjecutarseOpuesto() {
+	public void AgregoConMovArribaYDerechaEnBloqueDeRepetirDosVecesDebeEjecutarseOpuesto() {
 		
 		posicionFinal.sumar(new Posicion(-2,-2));
 		

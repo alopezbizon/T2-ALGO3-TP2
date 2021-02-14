@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 public class BloqueRepetirDosVecesTest {
 
 	@Test
-	void testRepetirBloqueMovDerecha() {
+	public void testRepetirBloqueMovDerecha() {
 		Posicion posicionInicial = new Posicion(5, 5);
 		Posicion posicionFinal = new Posicion(7, 5);
 		Personaje personaje = new Personaje(posicionInicial);
