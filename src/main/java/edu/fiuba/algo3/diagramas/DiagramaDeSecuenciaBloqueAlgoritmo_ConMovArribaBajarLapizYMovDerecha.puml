@@ -1,0 +1,31 @@
+@startuml
+title Se agregan 3 Bloques: BloqueMovArriba, BloqueBjarLapiz y BloqueMovDerecha
+
+actor User
+activate User
+User -> BloqueAlgoritmo: agregarBloque(BloqueMovArriba)
+User -> BloqueAlgoritmo: agregarBloque(BloqueBajarLapiz)
+User -> BloqueAlgoritmo: agregarBloque(BloqueMovDerecha)
+
+User -> BloqueAlgoritmo: accion(Personaje, Dibujo)
+
+BloqueAlgoritmo -> BloqueMovArriba:accion(Personaje, Dibujo)
+BloqueMovArriba -> Personaje : mover(Posicion(0,1)), Dibujo)
+
+Personaje -> Posicion : sumar(posInicial)
+Personaje<-- Posicion : posFinal
+Personaje -> LapizArriba : pintar(posInicial, posFinal, Dibujo)
+
+BloqueAlgoritmo -> BloqueBajarLapiz: accion(Personaje, Dibujo)
+BloqueBajarLapiz -> Personaje : bajarLapiz()
+
+BloqueAlgoritmo -> BloqueMovDerecha : accion(Personaje, Dibujo)
+BloqueMovDerecha -> Personaje : mover(Posicion(1,0), Dibujo)
+
+Personaje -> Posicion : sumar(posInicial)
+Personaje<-- Posicion : posFinal
+Personaje -> LapizAbajo : pintar(posInicial, posFinal, Dibujo)
+LapizAbajo -> Dibujo : crearTramo(posInicio, posFin);
+
+hide footbox
+@enduml

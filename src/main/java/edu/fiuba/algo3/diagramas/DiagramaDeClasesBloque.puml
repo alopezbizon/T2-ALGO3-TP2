@@ -1,0 +1,65 @@
+@startuml
+Abstract Class Bloque{
+    +accion(Pesonaje, Dibujo)
+    +accionInversa(Personaje, Dibujo)
+}
+Abstract Class BloqueComplejo{
+    +agregarBloque(Bloque)
+}
+Abstract Class BloqueRepetir{
+    -cantidadDeRepeticiones
+    +accion(Pesonaje, Dibujo)
+    +accionInversa(Personaje, Dibujo)
+}
+Class BloqueRepetirDosVeces{
+}
+Class BloqueRepetirTresVeces{
+}
+Class BloqueBajarLapiz{
+    +accion(Pesonaje, Dibujo)
+    +accionInversa(Personaje, Dibujo)
+}
+Class BloqueMovAbajo{
+    +accion(Pesonaje, Dibujo)
+    +accionInversa(Personaje, Dibujo)
+}
+Class BloqueMovArriba{
+    +accion(Pesonaje, Dibujo)
+    +accionInversa(Personaje, Dibujo)
+}
+Class BloqueMovDerecha{
+    +accion(Pesonaje, Dibujo)
+    +accionInversa(Personaje, Dibujo)
+}
+Class BloqueMovIzquierda{
+    +accion(Pesonaje, Dibujo)
+    +accionInversa(Personaje, Dibujo)
+}
+Class BloqueSubirLapiz{
+    +accion(Pesonaje, Dibujo)
+    +accionInversa(Personaje, Dibujo)
+}
+
+Class BloqueAlgoritmo{
+    +accion(Pesonaje, Dibujo)
+    +accionInversa(Personaje, Dibujo)
+}
+Class BloqueInversor{
+    +accion(Pesonaje, Dibujo)
+    +accionInversa(Personaje, Dibujo)
+}
+
+Bloque <|-- BloqueComplejo
+BloqueComplejo <|-- BloqueAlgoritmo
+BloqueComplejo <|-- BloqueInversor
+BloqueComplejo <|-- BloqueRepetir
+BloqueRepetir <|-- BloqueRepetirDosVeces
+BloqueRepetir <|-- BloqueRepetirTresVeces
+Bloque ---> Personaje
+Bloque <|-- BloqueBajarLapiz
+Bloque <|-- BloqueMovAbajo
+Bloque <|-- BloqueMovArriba
+Bloque <|-- BloqueMovDerecha
+Bloque <|-- BloqueMovIzquierda
+Bloque <|-- BloqueSubirLapiz
+@enduml

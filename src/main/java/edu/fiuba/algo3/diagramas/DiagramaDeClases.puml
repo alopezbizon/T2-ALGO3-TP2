@@ -1,0 +1,57 @@
+@startuml
+Abstract Class Bloque{
+    +accion(Pesonaje, Dibujo)
+    +accionInversa(Personaje, Dibujo)
+}
+Abstract Class BloqueComplejo{
+    +agregarBloque(Bloque)
+}
+
+Bloque <|-- BloqueComplejo
+Bloque ---> Personaje
+
+Class Personaje{
+    +subirLapiz()
+    +bajarLapiz()
+    +mover(Posicion, Dibujo)
+    +obtenerPosicion()
+}
+Personaje "1"*--"1" Lapiz
+Personaje "1"*--"1" Posicion
+
+Class Dibujo{
+    +crearTramo(posicionInicio, posicionFin)
+    +obtenerTramos():List<Tramo>
+    +contieneTramo(Tramo): boolean
+}
+
+Class Tramo{
+    +obtenerInicio():Posicion
+    +obtenerFin():Posicion
+    +esIgual(Posicion): boolean
+}
+
+Tramo "1"*--"2" Posicion
+Dibujo "1"*--"0..*"Tramo
+
+Abstract Class Lapiz{
+    +pintar(posicionInicio, posicionFin, Dibujo)
+}
+Class LapizAbajo{
+    +pintar(posicionInicio, posicionFin, Dibujo)
+}
+Class LapizArriba{
+    +pintar(posicionInicio, posicionFin, Dibujo)
+}
+Lapiz <|-- LapizAbajo
+Lapiz <|-- LapizArriba
+Lapiz --> Dibujo
+
+Class Posicion{
+    -Integer:x
+    -Integer:y
+    +esIgual(Posicion, posicion):boolean
+    +sumar(Posicion, posicion)
+    +copiar(Posicion): Posicion
+}
+@enduml
