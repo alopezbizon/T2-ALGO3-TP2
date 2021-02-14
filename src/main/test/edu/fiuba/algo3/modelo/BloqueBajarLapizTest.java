@@ -1,9 +1,5 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.Bloque;
-import edu.fiuba.algo3.modelo.BloqueBajarLapiz;
-import edu.fiuba.algo3.modelo.Personaje;
-
 import org.junit.jupiter.api.Test;
 import static org.mockito.Mockito.*;
 
@@ -16,7 +12,7 @@ public class BloqueBajarLapizTest {
         Bloque bloque = new BloqueBajarLapiz();
         Dibujo dibujo = new Dibujo();
 
-        bloque.accion(personajeMock, dibujo);
+        bloque.ejecutar(personajeMock, dibujo);
 
         // TODO: ¿Realmente verifica que el lápiz está abajo?
         verify(personajeMock,never()).subirLapiz();
@@ -32,7 +28,7 @@ public class BloqueBajarLapizTest {
         personajeMock.subirLapiz();
         verify(personajeMock,times(1)).subirLapiz();
         verify(personajeMock,never()).bajarLapiz();
-        bloque.accion(personajeMock, dibujo);
+        bloque.ejecutar(personajeMock, dibujo);
 
         // TODO: ¿Realmente verifica que el lápiz está abajo?
         verify(personajeMock,times(1)).subirLapiz();

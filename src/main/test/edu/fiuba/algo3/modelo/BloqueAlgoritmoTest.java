@@ -1,10 +1,8 @@
 package edu.fiuba.algo3.modelo;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
 
 public class BloqueAlgoritmoTest {
 
@@ -26,20 +24,20 @@ public class BloqueAlgoritmoTest {
 	@Test
 	public void testCrearAlgoritmoVacio() {		
 		
-		algoritmo.accion(personaje, null);
+		algoritmo.ejecutar(personaje, null);
 		
 		posicionFinal = posicionInicial;
-		assertTrue(personaje.obtenerPosicion().esIgual(posicionInicial));
+		assertTrue(personaje.obtenerPosicion().equals(posicionInicial));
 	}
 	
 	@Test
 	public void testAgregarUnBloqueMovimientoAbajo() {
 				
 		algoritmo.agregarBloque(new BloqueMovAbajo());		
-		algoritmo.accion(personaje, null);
+		algoritmo.ejecutar(personaje, null);
 		
 		posicionFinal = new Posicion(0,-1);
-		assertTrue(personaje.obtenerPosicion().esIgual(posicionFinal));		
+		assertTrue(personaje.obtenerPosicion().equals(posicionFinal));
 	}
 	
 	@Test
@@ -47,10 +45,10 @@ public class BloqueAlgoritmoTest {
 				
 		algoritmo.agregarBloque(new BloqueMovAbajo());		
 		algoritmo.agregarBloque(new BloqueMovArriba());
-		algoritmo.accion(personaje, null);
+		algoritmo.ejecutar(personaje, null);
 		
 		posicionFinal = posicionInicial;
-		assertTrue(personaje.obtenerPosicion().esIgual(posicionFinal));		
+		assertTrue(personaje.obtenerPosicion().equals(posicionFinal));
 	}
 	
 	@Test
@@ -63,10 +61,10 @@ public class BloqueAlgoritmoTest {
 		
 		algoritmo.agregarBloque(bloqueRepetir);
 		
-		algoritmo.accion(personaje, null);
+		algoritmo.ejecutar(personaje, null);
 
 		posicionFinal = new Posicion(2,-1);
-		assertTrue(personaje.obtenerPosicion().esIgual(posicionFinal));				
+		assertTrue(personaje.obtenerPosicion().equals(posicionFinal));
 	}
 
 }

@@ -6,17 +6,17 @@ activate User
 User -> BloqueRepetirDosVeces : agregarBloque(BloqueMovDerecha)
 User -> BloqueRepetirDosVeces : agregarBloque(BloqueMovArriba)
 
-User -> BloqueRepetirDosVeces : accion(Personaje, Dibujo)
+User -> BloqueRepetirDosVeces : ejecutar(Personaje, Dibujo)
 
 loop 2 times
-BloqueRepetirDosVeces -> BloqueMovDerecha : accion(Personaje, Dibujo)
+BloqueRepetirDosVeces -> BloqueMovDerecha : ejecutar(Personaje, Dibujo)
 BloqueMovDerecha-> Personaje : mover(Posicion(1, 0)), Dibujo)
 
 Personaje -> Posicion : sumar(posInicial)
 Personaje<-- Posicion : posFinal
 Personaje -> LapizArriba : pintar(posInicial, posFinal, Dibujo)
 
-BloqueRepetirDosVeces -> BloqueMovArriba : accion(Personaje, Dibujo)
+BloqueRepetirDosVeces -> BloqueMovArriba : ejecutar(Personaje, Dibujo)
 BloqueMovArriba -> Personaje : mover(Posicion(0, 1)), Dibujo)
 
 Personaje -> Posicion : sumar(posInicial)

@@ -19,9 +19,9 @@ public class Personaje {
     }
 
     public void mover(Posicion posicion, Dibujo dibujo) {
-        Posicion unaPosicion = this.posicion.copiar();
+        Posicion unaPosicion = this.posicion.copy();
         this.posicion.sumar(posicion);
-        Posicion otraPosicion = this.posicion.copiar();
+        Posicion otraPosicion = this.posicion.copy();
         this.lapiz.pintar(unaPosicion, otraPosicion, dibujo);
     }
 

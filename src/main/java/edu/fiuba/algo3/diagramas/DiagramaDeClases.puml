@@ -1,7 +1,7 @@
 @startuml
 Abstract Class Bloque{
-    +accion(Pesonaje, Dibujo)
-    +accionInversa(Personaje, Dibujo)
+    +ejecutar(Pesonaje, Dibujo)
+    +ejecutarInversa(Personaje, Dibujo)
 }
 Abstract Class BloqueComplejo{
     +agregarBloque(Bloque)
@@ -28,7 +28,7 @@ Class Dibujo{
 Class Tramo{
     +obtenerInicio():Posicion
     +obtenerFin():Posicion
-    +esIgual(Posicion): boolean
+    +equals(Posicion): boolean
 }
 
 Tramo "1"*--"2" Posicion
@@ -50,7 +50,7 @@ Lapiz --> Dibujo
 Class Posicion{
     -Integer:x
     -Integer:y
-    +esIgual(Posicion, posicion):boolean
+    +equals(Posicion, posicion):boolean
     +sumar(Posicion, posicion)
     +copiar(Posicion): Posicion
 }

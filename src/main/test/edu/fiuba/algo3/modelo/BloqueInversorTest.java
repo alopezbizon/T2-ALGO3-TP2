@@ -28,9 +28,9 @@ public class BloqueInversorTest {
 		
 		bloqueInversor.agregarBloque(new BloqueMovDerecha());
 		
-		bloqueInversor.accion(personaje, null);
+		bloqueInversor.ejecutar(personaje, null);
 			
-		assertTrue(personaje.obtenerPosicion().esIgual(posicionFinal));		
+		assertTrue(personaje.obtenerPosicion().equals(posicionFinal));
 	}
 	
 	@Test
@@ -40,9 +40,9 @@ public class BloqueInversorTest {
 		
 		bloqueInversor.agregarBloque(new BloqueMovIzquierda());
 		
-		bloqueInversor.accion(personaje, null);
+		bloqueInversor.ejecutar(personaje, null);
 			
-		assertTrue(personaje.obtenerPosicion().esIgual(posicionFinal));		
+		assertTrue(personaje.obtenerPosicion().equals(posicionFinal));
 	}
 	
 	@Test
@@ -52,9 +52,9 @@ public class BloqueInversorTest {
 		
 		bloqueInversor.agregarBloque(new BloqueMovAbajo());
 		
-		bloqueInversor.accion(personaje, null);
+		bloqueInversor.ejecutar(personaje, null);
 			
-		assertTrue(personaje.obtenerPosicion().esIgual(posicionFinal));		
+		assertTrue(personaje.obtenerPosicion().equals(posicionFinal));
 	}
 	
 	@Test
@@ -64,9 +64,9 @@ public class BloqueInversorTest {
 		
 		bloqueInversor.agregarBloque(new BloqueMovArriba());
 		
-		bloqueInversor.accion(personaje, null);
+		bloqueInversor.ejecutar(personaje, null);
 			
-		assertTrue(personaje.obtenerPosicion().esIgual(posicionFinal));		
+		assertTrue(personaje.obtenerPosicion().equals(posicionFinal));
 	}
 	
 	@Test
@@ -77,9 +77,9 @@ public class BloqueInversorTest {
 		bloqueInversor.agregarBloque(new BloqueMovArriba());
 		bloqueInversor.agregarBloque(new BloqueMovDerecha());
 		
-		bloqueInversor.accion(personaje, null);
+		bloqueInversor.ejecutar(personaje, null);
 			
-		assertTrue(personaje.obtenerPosicion().esIgual(posicionFinal));		
+		assertTrue(personaje.obtenerPosicion().equals(posicionFinal));
 	}
 	
 	@Test
@@ -93,9 +93,9 @@ public class BloqueInversorTest {
 		
 		bloqueInversor.agregarBloque(bloqueRepetir);
 		
-		bloqueInversor.accion(personaje, null);
+		bloqueInversor.ejecutar(personaje, null);
 			
-		assertTrue(personaje.obtenerPosicion().esIgual(posicionFinal));		
+		assertTrue(personaje.obtenerPosicion().equals(posicionFinal));
 	}
 
 }

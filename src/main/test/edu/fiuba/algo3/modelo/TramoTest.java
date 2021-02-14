@@ -25,7 +25,7 @@ public class TramoTest {
         Posicion fin = new Posicion(1,0);
         Tramo tramo = new Tramo(inicio, fin);
 
-        assertTrue(tramo.obtenerInicio().esIgual(inicio));
+        assertTrue(tramo.obtenerInicio().equals(inicio));
     }
 
     @Test
@@ -34,7 +34,7 @@ public class TramoTest {
         Posicion fin = new Posicion(1,0);
         Tramo tramo = new Tramo(inicio, fin);
 
-        assertTrue(tramo.obtenerFin().esIgual(fin));
+        assertTrue(tramo.obtenerFin().equals(fin));
     }
 
     @Test
@@ -42,7 +42,7 @@ public class TramoTest {
         Tramo tramo = new Tramo(new Posicion(0,0), new Posicion(1,0));
         Tramo otroTramo = new Tramo(new Posicion(0,0), new Posicion(1,0));
 
-        assertTrue(tramo.esIgual(otroTramo));
+        assertTrue(tramo.equals(otroTramo));
     }
 
     @Test
@@ -50,7 +50,7 @@ public class TramoTest {
         Tramo tramo = new Tramo(new Posicion(0,0), new Posicion(1,0));
         Tramo otroTramo = new Tramo(new Posicion(1,0), new Posicion(0,0));
 
-        assertTrue(tramo.esIgual(otroTramo));
+        assertTrue(tramo.equals(otroTramo));
     }
 
     @Test
@@ -58,6 +58,6 @@ public class TramoTest {
         Tramo tramo = new Tramo(new Posicion(0,0), new Posicion(1,0));
         Tramo otroTramo = new Tramo(new Posicion(0,0), new Posicion(0,1));
 
-        assertFalse(tramo.esIgual(otroTramo));
+        assertFalse(tramo.equals(otroTramo));
     }
 }

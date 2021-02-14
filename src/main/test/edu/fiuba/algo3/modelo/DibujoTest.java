@@ -50,7 +50,7 @@ public class DibujoTest {
 
         List<Tramo> tramosCreados = dibujo.obtenerTramos();
         tramosCreados.forEach(tramo -> assertTrue(
-                tramos.stream().anyMatch(unTramo -> unTramo.esIgual(tramo))));
+                tramos.stream().anyMatch(unTramo -> unTramo.equals(tramo))));
         assertEquals(tramosCreados.size(), tramos.size());
     }
 

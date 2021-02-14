@@ -6,12 +6,12 @@ activate User
 User -> BloqueInversor: agregarBloque(BloqueSubirLapiz)
 User -> BloqueInversor: agregarBloque(BloqueMovArriba)
 
-User -> BloqueInversor: accion(Personaje, Dibujo)
+User -> BloqueInversor: ejecutar(Personaje, Dibujo)
 
-BloqueInversor-> BloqueSubirLapiz: accionInversa(Personaje, Dibujo)
+BloqueInversor-> BloqueSubirLapiz: ejecutarInversa(Personaje, Dibujo)
 BloqueSubirLapiz-> Personaje : bajarLapiz()
 
-BloqueInversor-> BloqueMovArriba:accionInversa(Personaje, Dibujo)
+BloqueInversor-> BloqueMovArriba:ejecutarInversa(Personaje, Dibujo)
 BloqueMovArriba -> Personaje : mover(Posicion(0,-1)), Dibujo)
 
 Personaje -> Posicion : sumar(posInicial)

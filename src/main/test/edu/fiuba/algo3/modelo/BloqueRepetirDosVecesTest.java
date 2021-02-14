@@ -16,9 +16,9 @@ public class BloqueRepetirDosVecesTest {
 		
 		bloqueRepetir.agregarBloque(bloque);
 
-		bloqueRepetir.accion(personaje, null);
+		bloqueRepetir.ejecutar(personaje, null);
 
-		assertTrue(personaje.obtenerPosicion().esIgual(posicionFinal));
+		assertTrue(personaje.obtenerPosicion().equals(posicionFinal));
 	}
 
 }

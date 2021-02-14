@@ -1,52 +1,52 @@
 @startuml
 Abstract Class Bloque{
-    +accion(Pesonaje, Dibujo)
-    +accionInversa(Personaje, Dibujo)
+    +ejecutar(Pesonaje, Dibujo)
+    +ejecutarInversa(Personaje, Dibujo)
 }
 Abstract Class BloqueComplejo{
     +agregarBloque(Bloque)
 }
 Abstract Class BloqueRepetir{
     -cantidadDeRepeticiones
-    +accion(Pesonaje, Dibujo)
-    +accionInversa(Personaje, Dibujo)
+    +ejecutar(Pesonaje, Dibujo)
+    +ejecutarInversa(Personaje, Dibujo)
 }
 Class BloqueRepetirDosVeces{
 }
 Class BloqueRepetirTresVeces{
 }
 Class BloqueBajarLapiz{
-    +accion(Pesonaje, Dibujo)
-    +accionInversa(Personaje, Dibujo)
+    +ejecutar(Pesonaje, Dibujo)
+    +ejecutarInversa(Personaje, Dibujo)
 }
 Class BloqueMovAbajo{
-    +accion(Pesonaje, Dibujo)
-    +accionInversa(Personaje, Dibujo)
+    +ejecutar(Pesonaje, Dibujo)
+    +ejecutarInversa(Personaje, Dibujo)
 }
 Class BloqueMovArriba{
-    +accion(Pesonaje, Dibujo)
-    +accionInversa(Personaje, Dibujo)
+    +ejecutar(Pesonaje, Dibujo)
+    +ejecutarInversa(Personaje, Dibujo)
 }
 Class BloqueMovDerecha{
-    +accion(Pesonaje, Dibujo)
-    +accionInversa(Personaje, Dibujo)
+    +ejecutar(Pesonaje, Dibujo)
+    +ejecutarInversa(Personaje, Dibujo)
 }
 Class BloqueMovIzquierda{
-    +accion(Pesonaje, Dibujo)
-    +accionInversa(Personaje, Dibujo)
+    +ejecutar(Pesonaje, Dibujo)
+    +ejecutarInversa(Personaje, Dibujo)
 }
 Class BloqueSubirLapiz{
-    +accion(Pesonaje, Dibujo)
-    +accionInversa(Personaje, Dibujo)
+    +ejecutar(Pesonaje, Dibujo)
+    +ejecutarInversa(Personaje, Dibujo)
 }
 
 Class BloqueAlgoritmo{
-    +accion(Pesonaje, Dibujo)
-    +accionInversa(Personaje, Dibujo)
+    +ejecutar(Pesonaje, Dibujo)
+    +ejecutarInversa(Personaje, Dibujo)
 }
 Class BloqueInversor{
-    +accion(Pesonaje, Dibujo)
-    +accionInversa(Personaje, Dibujo)
+    +ejecutar(Pesonaje, Dibujo)
+    +ejecutarInversa(Personaje, Dibujo)
 }
 
 Bloque <|-- BloqueComplejo

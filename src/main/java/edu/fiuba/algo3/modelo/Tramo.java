@@ -7,7 +7,7 @@ public class Tramo {
     private Posicion fin;
 
     public Tramo(Posicion inicio, Posicion fin) throws TramoInvalidoPosicionDeInicioYFinIgualesException {
-        if (inicio.esIgual(fin)) {
+        if (inicio.equals(fin)) {
             throw new TramoInvalidoPosicionDeInicioYFinIgualesException();
         }
         this.inicio = inicio;
@@ -22,9 +22,9 @@ public class Tramo {
         return this.fin;
     }
 
-    public boolean esIgual(Tramo tramo) {
-        boolean esIgual = this.inicio.esIgual(tramo.obtenerInicio()) && this.fin.esIgual(tramo.obtenerFin());
-        boolean esLaInversion = this.inicio.esIgual(tramo.obtenerFin()) && this.fin.esIgual(tramo.obtenerInicio());
+    public boolean equals(Tramo tramo) {
+        boolean esIgual = this.inicio.equals(tramo.obtenerInicio()) && this.fin.equals(tramo.obtenerFin());
+        boolean esLaInversion = this.inicio.equals(tramo.obtenerFin()) && this.fin.equals(tramo.obtenerInicio());
         return (esIgual || esLaInversion);
     }
 }

@@ -12,8 +12,8 @@ public abstract class BloqueComplejo extends Bloque{
 	}
 	
 	@Override
-	public void accionInversa(Personaje personaje, Dibujo dibujo) {
-		this.accion(personaje, dibujo);
+	public void ejecutarInversa(Personaje personaje, Dibujo dibujo) {
+		this.ejecutar(personaje, dibujo);
 		
 	}
 

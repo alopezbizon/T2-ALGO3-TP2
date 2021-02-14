@@ -14,8 +14,8 @@ public class BloqueMovDerechaTest {
         Bloque bloque = new BloqueMovDerecha();
         Dibujo dibujo = new Dibujo();
 
-        bloque.accion(personaje, dibujo);
+        bloque.ejecutar(personaje, dibujo);
 
-        assertTrue(personaje.obtenerPosicion().esIgual(posicionFinal));
+        assertTrue(personaje.obtenerPosicion().equals(posicionFinal));
     }
 }

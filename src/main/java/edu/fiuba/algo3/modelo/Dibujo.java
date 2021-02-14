@@ -26,6 +26,6 @@ public class Dibujo {
     }
 
     public boolean contieneTramo(Tramo tramo) {
-        return (this.tramos.stream().anyMatch(unTramo -> unTramo.esIgual(tramo)));
+        return (this.tramos.stream().anyMatch(unTramo -> unTramo.equals(tramo)));
     }
 }

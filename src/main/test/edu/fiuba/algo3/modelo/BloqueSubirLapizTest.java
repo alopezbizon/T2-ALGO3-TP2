@@ -12,7 +12,7 @@ public class BloqueSubirLapizTest {
         Bloque bloque = new BloqueSubirLapiz();
         Dibujo dibujo = new Dibujo();
 
-        bloque.accion(personajeMock, dibujo);
+        bloque.ejecutar(personajeMock, dibujo);
 
         // TODO: ¿Realmente verifica que el lápiz está arriba?
         verify(personajeMock,times(1)).subirLapiz();
@@ -28,7 +28,7 @@ public class BloqueSubirLapizTest {
         personajeMock.bajarLapiz();
         verify(personajeMock,never()).subirLapiz();
         verify(personajeMock,times(1)).bajarLapiz();
-        bloque.accion(personajeMock, dibujo);
+        bloque.ejecutar(personajeMock, dibujo);
 
         // TODO: ¿Realmente verifica que el lápiz está abajo?
         verify(personajeMock,times(1)).subirLapiz();

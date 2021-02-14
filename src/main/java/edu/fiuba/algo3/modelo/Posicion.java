@@ -11,7 +11,7 @@ public class Posicion {
         this.y = y;
     }
 
-    public boolean esIgual(Posicion posicion) {
+    public boolean equals(Posicion posicion) {
         return (this.x.equals(posicion.x) && this.y.equals(posicion.y));
     }
 
@@ -20,7 +20,7 @@ public class Posicion {
         this.y += posicion.y;
     }
 
-    public Posicion copiar() {
+    public Posicion copy() {
         return new Posicion(this.x, this.y);
     }
 }

@@ -22,7 +22,7 @@ public class PersonajeTest {
         Posicion posicionInicial = new Posicion(5,5);
         Personaje personaje = new Personaje(posicionInicial);
 
-        assertTrue(personaje.obtenerPosicion().esIgual(posicionInicial));
+        assertTrue(personaje.obtenerPosicion().equals(posicionInicial));
     }
 
     @Test
@@ -69,10 +69,10 @@ public class PersonajeTest {
         Personaje personaje = new Personaje(posicionInicial);
         Dibujo dibujo = new Dibujo();
 
-        assertTrue(personaje.obtenerPosicion().esIgual(posicionInicial));
+        assertTrue(personaje.obtenerPosicion().equals(posicionInicial));
         personaje.mover(posicionParaMovimiento, dibujo);
 
-        assertTrue(personaje.obtenerPosicion().esIgual(posicionFinal));
+        assertTrue(personaje.obtenerPosicion().equals(posicionFinal));
     }
 
     @Test
@@ -83,10 +83,10 @@ public class PersonajeTest {
         Personaje personaje = new Personaje(posicionInicial);
         Dibujo dibujo = new Dibujo();
 
-        assertTrue(personaje.obtenerPosicion().esIgual(posicionInicial));
+        assertTrue(personaje.obtenerPosicion().equals(posicionInicial));
         personaje.mover(posicionParaMovimiento, dibujo);
 
-        assertTrue(personaje.obtenerPosicion().esIgual(posicionFinal));
+        assertTrue(personaje.obtenerPosicion().equals(posicionFinal));
     }
 
     @Test
@@ -97,10 +97,10 @@ public class PersonajeTest {
         Personaje personaje = new Personaje(posicionInicial);
         Dibujo dibujo = new Dibujo();
 
-        assertTrue(personaje.obtenerPosicion().esIgual(posicionInicial));
+        assertTrue(personaje.obtenerPosicion().equals(posicionInicial));
         personaje.mover(posicionParaMovimiento, dibujo);
 
-        assertTrue(personaje.obtenerPosicion().esIgual(posicionFinal));
+        assertTrue(personaje.obtenerPosicion().equals(posicionFinal));
     }
 
     @Test
@@ -111,10 +111,10 @@ public class PersonajeTest {
         Personaje personaje = new Personaje(posicionInicial);
         Dibujo dibujo = new Dibujo();
 
-        assertTrue(personaje.obtenerPosicion().esIgual(posicionInicial));
+        assertTrue(personaje.obtenerPosicion().equals(posicionInicial));
         personaje.mover(posicionParaMovimiento, dibujo);
 
-        assertTrue(personaje.obtenerPosicion().esIgual(posicionFinal));
+        assertTrue(personaje.obtenerPosicion().equals(posicionFinal));
     }
 
     @Test
@@ -154,7 +154,7 @@ public class PersonajeTest {
 
         List<Tramo> tramosCreados = dibujo.obtenerTramos();
         tramosCreados.forEach(tramoCreado -> assertTrue(
-                tramos.stream().anyMatch(unTramo -> unTramo.esIgual(tramoCreado))));
+                tramos.stream().anyMatch(unTramo -> unTramo.equals(tramoCreado))));
         assertEquals(tramosCreados.size(), tramos.size());
     }
 
@@ -180,7 +180,7 @@ public class PersonajeTest {
 
         List<Tramo> tramosCreados = dibujo.obtenerTramos();
         tramosCreados.forEach(tramoCreado -> assertTrue(
-                tramos.stream().anyMatch(unTramo -> unTramo.esIgual(tramoCreado))));
+                tramos.stream().anyMatch(unTramo -> unTramo.equals(tramoCreado))));
         assertEquals(tramosCreados.size(), tramos.size());
     }
 
@@ -191,12 +191,12 @@ public class PersonajeTest {
         Personaje personaje = new Personaje(posicionInicial);
         Dibujo dibujo = new Dibujo();
 
-        assertTrue(personaje.obtenerPosicion().esIgual(posicionInicial));
+        assertTrue(personaje.obtenerPosicion().equals(posicionInicial));
         personaje.mover(new Posicion(1,0), dibujo);
         personaje.mover(new Posicion(1,0), dibujo);
         personaje.mover(new Posicion(0,1), dibujo);
         personaje.mover(new Posicion(0,1), dibujo);
 
-        assertTrue(personaje.obtenerPosicion().esIgual(posicionFinal));
+        assertTrue(personaje.obtenerPosicion().equals(posicionFinal));
     }
 }

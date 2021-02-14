@@ -11,8 +11,8 @@ public class PosicionTest {
         Posicion posicion = new Posicion(1,1);
         Posicion otraPosicion = new Posicion(1,1);
 
-        assertTrue(posicion.esIgual(otraPosicion));
-        assertTrue(otraPosicion.esIgual(posicion));
+        assertTrue(posicion.equals(otraPosicion));
+        assertTrue(otraPosicion.equals(posicion));
     }
 
     @Test
@@ -20,8 +20,8 @@ public class PosicionTest {
         Posicion posicion = new Posicion(1,1);
         Posicion otraPosicion = new Posicion(0,1);
 
-        assertFalse(posicion.esIgual(otraPosicion));
-        assertFalse(otraPosicion.esIgual(posicion));
+        assertFalse(posicion.equals(otraPosicion));
+        assertFalse(otraPosicion.equals(posicion));
     }
 
     @Test
@@ -32,16 +32,16 @@ public class PosicionTest {
 
         posicion.sumar(otraPosicion);
 
-        assertTrue(posicion.esIgual(sumaPosiciones));
+        assertTrue(posicion.equals(sumaPosiciones));
     }
 
     @Test
     public void testPosicionCopiar_deberiaSumarXconXeYconY() {
         Posicion posicion = new Posicion(1,1);
 
-        Posicion otraPosicion = posicion.copiar();
+        Posicion otraPosicion = posicion.copy();
 
-        assertTrue(posicion.esIgual(otraPosicion));
+        assertTrue(posicion.equals(otraPosicion));
         assertFalse(posicion == otraPosicion);
     }
 }

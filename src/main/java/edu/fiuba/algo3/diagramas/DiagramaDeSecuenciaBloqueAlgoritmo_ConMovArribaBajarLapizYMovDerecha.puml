@@ -7,19 +7,19 @@ User -> BloqueAlgoritmo: agregarBloque(BloqueMovArriba)
 User -> BloqueAlgoritmo: agregarBloque(BloqueBajarLapiz)
 User -> BloqueAlgoritmo: agregarBloque(BloqueMovDerecha)
 
-User -> BloqueAlgoritmo: accion(Personaje, Dibujo)
+User -> BloqueAlgoritmo: ejecutar(Personaje, Dibujo)
 
-BloqueAlgoritmo -> BloqueMovArriba:accion(Personaje, Dibujo)
+BloqueAlgoritmo -> BloqueMovArriba:ejecutar(Personaje, Dibujo)
 BloqueMovArriba -> Personaje : mover(Posicion(0,1)), Dibujo)
 
 Personaje -> Posicion : sumar(posInicial)
 Personaje<-- Posicion : posFinal
 Personaje -> LapizArriba : pintar(posInicial, posFinal, Dibujo)
 
-BloqueAlgoritmo -> BloqueBajarLapiz: accion(Personaje, Dibujo)
+BloqueAlgoritmo -> BloqueBajarLapiz: ejecutar(Personaje, Dibujo)
 BloqueBajarLapiz -> Personaje : bajarLapiz()
 
-BloqueAlgoritmo -> BloqueMovDerecha : accion(Personaje, Dibujo)
+BloqueAlgoritmo -> BloqueMovDerecha : ejecutar(Personaje, Dibujo)
 BloqueMovDerecha -> Personaje : mover(Posicion(1,0), Dibujo)
 
 Personaje -> Posicion : sumar(posInicial)
