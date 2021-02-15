@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
 
 public class BloqueAlgoritmoTest {
@@ -281,4 +282,22 @@ public class BloqueAlgoritmoTest {
 		assertTrue(personaje.obtenerPosicion().equals(posicionFinal));
 	}
 
+	@Test
+	public void testBloqueAlgoritmoPersonalizadoInicializarNombre() {
+		BloqueAlgoritmo algoritmoMock = mock(BloqueAlgoritmo.class);
+
+		algoritmoMock.inicializarNombre("Pintar Cuadrado");
+
+		verify(algoritmoMock,times(1)).inicializarNombre("Pintar Cuadrado");
+	}
+
+	@Test
+	public void testBloqueAlgoritmoPersonalizadoObtenerNombre() {
+		BloqueAlgoritmo algoritmo = new BloqueAlgoritmo();
+
+		algoritmo.inicializarNombre("Pintar Cuadrado");
+		algoritmo.obtenerNombre();
+
+		assertEquals(algoritmo.obtenerNombre(),"Pintar Cuadrado");
+	}
 }
