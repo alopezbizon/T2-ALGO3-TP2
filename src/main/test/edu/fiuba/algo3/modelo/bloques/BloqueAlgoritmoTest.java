@@ -21,6 +21,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 
 
 public class BloqueAlgoritmoTest {
@@ -293,6 +296,25 @@ public class BloqueAlgoritmoTest {
 
 		posicionFinal = new Posicion(2,-1);
 		assertTrue(personaje.obtenerPosicion().equals(posicionFinal));
+	}
+	
+	@Test
+	public void testBloqueAlgoritmoPersonalizadoInicializarNombre() {
+		BloqueAlgoritmo algoritmoMock = mock(BloqueAlgoritmo.class);
+
+		algoritmoMock.inicializarNombre("Pintar Cuadrado");
+
+		verify(algoritmoMock,times(1)).inicializarNombre("Pintar Cuadrado");
+	}
+
+	@Test
+	public void testBloqueAlgoritmoPersonalizadoObtenerNombre() {
+		BloqueAlgoritmo algoritmo = new BloqueAlgoritmo();
+
+		algoritmo.inicializarNombre("Pintar Cuadrado");
+		algoritmo.obtenerNombre();
+
+		assertEquals(algoritmo.obtenerNombre(),"Pintar Cuadrado");
 	}
 
 }
