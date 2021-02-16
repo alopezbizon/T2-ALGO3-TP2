@@ -3,56 +3,43 @@ package edu.fiuba.algo3.vista;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import edu.fiuba.algo3.modelo.BloqueComplejo;
-import edu.fiuba.algo3.modelo.BloqueMovAbajo;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 
-public class ControladorPrincipal implements Initializable{
-	
-	
+public class ControladorPrincipal implements Initializable {
+
 	@FXML
-	private Button botonMovimientoIzquierda;
+	private Pane panelInferior;
 	@FXML
-	private Button botonMovimientoDerecha;
+	private Pane panelSuperiorDerecho;
 	@FXML
-	private Button botonMovimientoArriba;
-	@FXML
-	private Button botonMovimientoAbajo;
-	@FXML
-	private VBox vBoxAlgoritmo;
-	
-	
-	private BloqueComplejo modulo;
-	
-	public ControladorPrincipal(BloqueComplejo modulo) {
-		this.modulo = modulo;
+	private Pane panelSuperiorIzquierdo;
+
+	private Pane panelDibujo;
+	private Pane panelBloques;
+	private Pane panelAlgoritmo;
+
+	public ControladorPrincipal(Pane panelBloques, Pane panelAlgoritmo, Pane panelDibujo) {
+		this.panelBloques = panelBloques;
+		this.panelAlgoritmo = panelAlgoritmo;
+		this.panelDibujo = panelDibujo;
 	}
-
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		
-		
-		botonMovimientoAbajo.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent event) {
-				
-				modulo.agregarBloque(new BloqueMovAbajo());
-				vBoxAlgoritmo.getChildren().add(new Label("Bloque Movimiento Arriba"));
-				
-			}
-		});
-		
-		
-		
+
 	}
-		
-	
+
+	public void levantarComponentes() {
+		panelInferior.getChildren().add(panelDibujo);
+		panelSuperiorDerecho.getChildren().add(panelAlgoritmo);
+		panelSuperiorIzquierdo.getChildren().add(panelBloques);
+	}
 
 }

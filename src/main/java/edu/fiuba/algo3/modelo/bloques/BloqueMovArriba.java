@@ -1,5 +1,8 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.bloques;
 
+import edu.fiuba.algo3.modelo.Dibujo;
+import edu.fiuba.algo3.modelo.Personaje;
+import edu.fiuba.algo3.modelo.Posicion;
 
 public class BloqueMovArriba extends Bloque {
 

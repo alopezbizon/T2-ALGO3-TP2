@@ -1,7 +1,10 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.bloques;
 
 import java.util.ArrayList;
 import java.util.Collection;
+
+import edu.fiuba.algo3.modelo.Dibujo;
+import edu.fiuba.algo3.modelo.Personaje;
 
 public abstract class BloqueComplejo extends Bloque{
 
