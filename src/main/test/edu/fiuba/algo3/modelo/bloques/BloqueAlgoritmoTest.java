@@ -7,23 +7,12 @@ import edu.fiuba.algo3.modelo.Dibujo;
 import edu.fiuba.algo3.modelo.Personaje;
 import edu.fiuba.algo3.modelo.Posicion;
 import edu.fiuba.algo3.modelo.Tramo;
-import edu.fiuba.algo3.modelo.bloques.BloqueAlgoritmo;
-import edu.fiuba.algo3.modelo.bloques.BloqueBajarLapiz;
-import edu.fiuba.algo3.modelo.bloques.BloqueMovAbajo;
-import edu.fiuba.algo3.modelo.bloques.BloqueMovArriba;
-import edu.fiuba.algo3.modelo.bloques.BloqueMovDerecha;
-import edu.fiuba.algo3.modelo.bloques.BloqueMovIzquierda;
-import edu.fiuba.algo3.modelo.bloques.BloqueRepetir;
-import edu.fiuba.algo3.modelo.bloques.BloqueRepetirDosVeces;
-import edu.fiuba.algo3.modelo.bloques.BloqueSubirLapiz;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.*;
 
 
 public class BloqueAlgoritmoTest {

@@ -5,8 +5,6 @@ import org.junit.jupiter.api.Test;
 import edu.fiuba.algo3.modelo.Dibujo;
 import edu.fiuba.algo3.modelo.Personaje;
 import edu.fiuba.algo3.modelo.Posicion;
-import edu.fiuba.algo3.modelo.bloques.Bloque;
-import edu.fiuba.algo3.modelo.bloques.BloqueMovAbajo;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

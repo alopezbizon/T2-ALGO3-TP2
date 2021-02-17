@@ -7,13 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import edu.fiuba.algo3.modelo.Personaje;
 import edu.fiuba.algo3.modelo.Posicion;
-import edu.fiuba.algo3.modelo.bloques.BloqueInversor;
-import edu.fiuba.algo3.modelo.bloques.BloqueMovAbajo;
-import edu.fiuba.algo3.modelo.bloques.BloqueMovArriba;
-import edu.fiuba.algo3.modelo.bloques.BloqueMovDerecha;
-import edu.fiuba.algo3.modelo.bloques.BloqueMovIzquierda;
-import edu.fiuba.algo3.modelo.bloques.BloqueRepetir;
-import edu.fiuba.algo3.modelo.bloques.BloqueRepetirDosVeces;
+
 
 public class BloqueInversorTest {
 	
