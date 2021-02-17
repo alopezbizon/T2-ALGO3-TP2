@@ -102,4 +102,17 @@ public class ModuloAlgoritmo {
 		bloques.add(bloque);
 		eventos.getOnAgregarBloque().notificar(bloque);
 	}
+
+	public void ejecutarAlgoritmo() {
+		// TODO: lógica, evento y notificación.
+	}
+
+	public void reiniciarAlgoritmo() {
+		this.bloques = new ArrayList<>();
+		// TODO: evento y notificación.
+	}
+
+	public void guardarAlgoritmo() {
+		// TODO: lógica, evento y notificación.
+	}
 }

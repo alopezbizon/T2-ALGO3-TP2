@@ -9,10 +9,17 @@ import edu.fiuba.algo3.modelo.eventos.EventosBloque;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 
 public class ControladorPanelAlgoritmo implements Initializable {
-	
+
+	@FXML
+	private Button buttonEjecutar;
+	@FXML
+	private Button buttonReiniciar;
+	@FXML
+	private Button buttonGuardar;
 	@FXML
 	private ListView listAlgoritmo;	
 	
@@ -25,7 +32,10 @@ public class ControladorPanelAlgoritmo implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		this.inicializarEventos();
-		
+
+		buttonEjecutar.setOnAction(event -> moduloAlgoritmo.ejecutarAlgoritmo());
+		buttonReiniciar.setOnAction(event -> moduloAlgoritmo.reiniciarAlgoritmo());
+		buttonGuardar.setOnAction(event -> moduloAlgoritmo.guardarAlgoritmo());
 	}
 
 	private void inicializarEventos() {
