@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -22,14 +20,14 @@
          <children>
             <Button fx:id="buttonMovArriba" mnemonicParsing="false" text="arriba" />
             <Button fx:id="buttonMovAbajo" mnemonicParsing="false" text="abajo" GridPane.columnIndex="1" />
-            <Button fx:id="buttonMovDerecha" mnemonicParsing="false" text="derecha" GridPane.columnIndex="2" />
-            <Button fx:id="buttonMovIzquierda" mnemonicParsing="false" text="izquierda" GridPane.columnIndex="3" />
-            <Button fx:id="buttonLapizArriba" mnemonicParsing="false" text="lapiz arriba" GridPane.rowIndex="1" />
-            <Button fx:id="buttonLapizAbajo" mnemonicParsing="false" text="lapiz abajo" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button fx:id="buttonRepetirDosVeces" mnemonicParsing="false" text="repetir 2 veces" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Button fx:id="buttonRepetir3Veces" mnemonicParsing="false" text="repetir 3 veces" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <Button fx:id="buttonInvertir" mnemonicParsing="false" text="invertir" GridPane.rowIndex="2" />
-            <Button fx:id="buttonAlgoritmoGuardado" mnemonicParsing="false" text="algoritmo" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button fx:id="buttonMovDerecha" mnemonicParsing="false" text="derecha" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button fx:id="buttonMovIzquierda" mnemonicParsing="false" text="izquierda" GridPane.rowIndex="1" />
+            <Button fx:id="buttonLapizArriba" mnemonicParsing="false" text="lapiz arriba" GridPane.rowIndex="2" />
+            <Button fx:id="buttonLapizAbajo" mnemonicParsing="false" text="lapiz abajo" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button fx:id="buttonRepetirDosVeces" mnemonicParsing="false" text="repetir 2 veces" GridPane.columnIndex="2" />
+            <Button fx:id="buttonRepetirTresVeces" mnemonicParsing="false" text="repetir 3 veces" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button fx:id="buttonInvertir" mnemonicParsing="false" text="invertir" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Button fx:id="buttonAlgoritmoGuardado" mnemonicParsing="false" text="algoritmo" GridPane.columnIndex="3" GridPane.rowIndex="2" />
          </children>
       </GridPane>
    </children>

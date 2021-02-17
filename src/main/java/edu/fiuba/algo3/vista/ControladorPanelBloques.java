@@ -27,7 +27,7 @@ public class ControladorPanelBloques implements Initializable{
 	@FXML
 	private Button buttonRepetirDosVeces;
 	@FXML
-	private Button buttonRepetir3Veces;
+	private Button buttonRepetirTresVeces;
 	@FXML
 	private Button buttonInvertir;
 	@FXML
@@ -86,7 +86,7 @@ public class ControladorPanelBloques implements Initializable{
 				moduloAlgoritmo.agregarBloqueRepetirDosVeces();	
 			}
 		});
-		buttonRepetir3Veces.setOnAction(new EventHandler<ActionEvent>() {
+		buttonRepetirTresVeces.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
 				moduloAlgoritmo.agregarBloqueRepetirTresVeces();	
