@@ -44,4 +44,18 @@ public class PosicionTest {
         assertTrue(posicion.equals(otraPosicion));
         assertFalse(posicion == otraPosicion);
     }
+
+    @Test
+    public void testPosicionObtenerX_deberiaDevolverSuValorEnX() {
+        Posicion posicion = new Posicion(1,1);
+
+        assertEquals(posicion.obtenerX(),1);
+    }
+
+    @Test
+    public void testPosicionObtenerY_deberiaDevolverSuValorEnY() {
+        Posicion posicion = new Posicion(1,1);
+
+        assertEquals(posicion.obtenerY(),1);
+    }
 }

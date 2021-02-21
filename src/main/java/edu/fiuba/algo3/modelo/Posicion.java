@@ -23,4 +23,12 @@ public class Posicion {
     public Posicion copy() {
         return new Posicion(this.x, this.y);
     }
+
+    public Integer obtenerX() {
+        return this.x;
+    }
+
+    public Integer obtenerY() {
+        return this.y;
+    }
 }
