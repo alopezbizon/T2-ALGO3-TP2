@@ -16,7 +16,9 @@ import javafx.scene.canvas.GraphicsContext;
 
 public class ControladorPanelDibujo implements Initializable {
 
-    public static final int LARGO_LINEA = 40;
+    private double ANCHO_CANVAS;
+    private double ALTO_CANVAS;
+    private static final int LARGO_LINEA = 40;
 
     @FXML
     private Canvas canvasSectorDibujo;
@@ -31,14 +33,16 @@ public class ControladorPanelDibujo implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         this.contextoGraficoDibujo = this.canvasSectorDibujo.getGraphicsContext2D();
+        this.ANCHO_CANVAS = this.canvasSectorDibujo.getWidth();
+        this.ALTO_CANVAS = this.canvasSectorDibujo.getHeight();
         this.inicializarPosiciones();
     }
 
     private void inicializarPosiciones() {
         this.posiciones = new ArrayList<Posicion>();
 
-        int ancho = (int) this.canvasSectorDibujo.getWidth() / LARGO_LINEA;
-        int alto = (int) this.canvasSectorDibujo.getHeight() / LARGO_LINEA;
+        int ancho = (int) this.ANCHO_CANVAS / LARGO_LINEA;
+        int alto = (int) this.ALTO_CANVAS / LARGO_LINEA;
 
         for (int x = 0; x < ancho; x++) {
             for (int y = 0; y < alto; y++) {
@@ -57,5 +61,9 @@ public class ControladorPanelDibujo implements Initializable {
                 fin.obtenerX() * LARGO_LINEA,
                 fin.obtenerY() * LARGO_LINEA
         );
+    }
+
+    public void borrarDibujo() {
+        contextoGraficoDibujo.clearRect(0,0, this.ANCHO_CANVAS, this.ALTO_CANVAS);
     }
 }
