@@ -5,6 +5,6 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Canvas fx:id="canvasSectorDibujo" height="200.0" width="200.0" />
+      <Canvas fx:id="canvasSectorDibujo" height="600.0" width="600.0" />
    </children>
 </AnchorPane>
