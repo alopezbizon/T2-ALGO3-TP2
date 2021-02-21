@@ -5,6 +5,7 @@ import java.io.IOException;
 import edu.fiuba.algo3.modelo.ModuloAlgoritmo;
 import edu.fiuba.algo3.vista.ControladorPanelAlgoritmo;
 import edu.fiuba.algo3.vista.ControladorPanelBloques;
+import edu.fiuba.algo3.vista.ControladorPanelDibujo;
 import edu.fiuba.algo3.vista.ControladorPrincipal;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -38,7 +39,6 @@ public class App extends Application {
 
 	private void inicializarModelo() {
 		moduloAlgoritmo = new ModuloAlgoritmo();
-		
 	}
 
 	private void levantarApp() {
@@ -48,7 +48,6 @@ public class App extends Application {
 	private void inicializarAplicacion() {
 		this.inicializarPaneles();
 		this.inicializarVentenaPrincipal();
-		
 	}
 
 	private void inicializarPaneles() {
@@ -65,7 +64,6 @@ public class App extends Application {
 		} catch (IOException e) {
 			System.out.println("error al levantar panel-algoritmo.fxml");
 		}
-		
 	}
 
 	private void inicializarPanelBloques() {				
@@ -83,6 +81,7 @@ public class App extends Application {
 	private void inicializarPanelDibujo() {	
 		try {
 			FXMLLoader loader = new FXMLLoader(this.getClass().getClassLoader().getResource("panel-dibujo.fxml"));
+			loader.setController(new ControladorPanelDibujo(moduloAlgoritmo));
 			panelDibujo = loader.load();
 		} catch (IOException e) {
 			System.out.println("error al levantar panel-dibujo.fxml");
@@ -110,5 +109,4 @@ public class App extends Application {
 	public static void main(String[] args) {
 		launch();
 	}
-
 }
