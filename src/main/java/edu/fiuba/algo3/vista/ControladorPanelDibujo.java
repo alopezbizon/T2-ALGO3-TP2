@@ -8,6 +8,7 @@ import java.util.ResourceBundle;
 import edu.fiuba.algo3.modelo.ModuloAlgoritmo;
 import edu.fiuba.algo3.modelo.Posicion;
 import edu.fiuba.algo3.modelo.Tramo;
+import edu.fiuba.algo3.modelo.TramoInvalidoPosicionDeInicioYFinIgualesException;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
@@ -22,7 +23,9 @@ public class ControladorPanelDibujo implements Initializable {
 
     @FXML
     private Canvas canvasSectorDibujo;
+    
     private GraphicsContext contextoGraficoDibujo;
+    
     private List posiciones;
     private ModuloAlgoritmo moduloAlgoritmo;
 
@@ -36,6 +39,14 @@ public class ControladorPanelDibujo implements Initializable {
         this.ANCHO_CANVAS = this.canvasSectorDibujo.getWidth();
         this.ALTO_CANVAS = this.canvasSectorDibujo.getHeight();
         this.inicializarPosiciones();
+        
+        try {
+			pintarTramo(new Tramo(new Posicion(2,0), new Posicion(0,1)));
+			
+		} catch (TramoInvalidoPosicionDeInicioYFinIgualesException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 
     private void inicializarPosiciones() {
@@ -54,12 +65,15 @@ public class ControladorPanelDibujo implements Initializable {
     public void pintarTramo(Tramo tramo) {
         Posicion inicio = tramo.obtenerInicio();
         Posicion fin = tramo.obtenerFin();
+        
+        double offset_x = ANCHO_CANVAS/2;
+        double offset_y = ALTO_CANVAS/2;
 
         contextoGraficoDibujo.strokeLine(
-                inicio.obtenerX() * LARGO_LINEA,
-                inicio.obtenerY() * LARGO_LINEA,
-                fin.obtenerX() * LARGO_LINEA,
-                fin.obtenerY() * LARGO_LINEA
+        		offset_x + inicio.obtenerX() * LARGO_LINEA,
+        		offset_y + inicio.obtenerY() * LARGO_LINEA,
+                offset_x + fin.obtenerX() * LARGO_LINEA,
+                offset_y + fin.obtenerY() * LARGO_LINEA
         );
     }
 

@@ -97,8 +97,8 @@ public class App extends Application {
 			
 			stage.setTitle("AlgoBlocks");
 			stage.setScene(new Scene(root));
-			stage.setWidth(600);
-			stage.setHeight(400);
+			stage.setWidth(1200);
+			stage.setHeight(900);
 			stage.show();
 			
 		} catch (IOException e) {
