@@ -108,21 +108,28 @@ public class ModuloAlgoritmo {
 	}
 
 	public void ejecutarAlgoritmo() {
+		reiniciarPersonajeYDibujo();
 		BloqueAlgoritmo algoritmo = new BloqueAlgoritmo();
+		
 		algoritmo.agregarBloques(bloques);
-		algoritmo.ejecutar(personaje, dibujo);		
+		algoritmo.ejecutar(personaje, dibujo);	
+		System.out.println(dibujo.obtenerTramos().size());
 		eventos.getOnDibujar().notificar(dibujo.obtenerTramos());
 	}
 
 	public void reiniciarAlgoritmo() {
-		this.bloques = new ArrayList<>();
-		this.dibujo = new Dibujo();
-		this.personaje = new Personaje(new Posicion(0,0));
+		reiniciarPersonajeYDibujo();
+		this.bloques = new ArrayList<>();		
 		eventos.getOnReiniciar().notificar("");
 	}
 
 	public void guardarAlgoritmo() {
 		algoritmoGuardado = new BloqueAlgoritmo();
 		algoritmoGuardado.agregarBloques(bloques);
+	}
+	
+	private void reiniciarPersonajeYDibujo() {
+		dibujo = new Dibujo();
+		personaje = new Personaje(new Posicion(0,0));		
 	}
 }
