@@ -44,34 +44,9 @@ public class ControladorPanelAlgoritmo implements Initializable {
 	}
 
 	private void onAgregarBloque(Bloque bloque) {
-		System.out.println(bloque.toString());
-		System.out.println("agregando bloque");
 		listAlgoritmo.getItems().clear();
 		listAlgoritmo.getItems().addAll(moduloAlgoritmo.getBloques());
-		listAlgoritmo.setCellFactory(bloqueAgregado -> new BloqueCell(this));
-		
+		listAlgoritmo.setCellFactory(bloqueAgregado -> new BloqueCell());		
 	}
-	
-	
-//	Button boton = new Button("MovAbajo");
-//	
-//	boton.setOnAction(new EventHandler<ActionEvent>() {
-//		public ControladorPanelAlgoritmo(ModuloAlgoritmo moduloAlgoritmo) {
-//		// TODO Auto-generated constructor stub
-//	}
-//
-//		
-//
-//		@Override
-//		public void handle(ActionEvent event) {
-//			vBoxAlgoritmo.getChildren().remove(boton);
-//			modulo.eliminarUltimoBloque();
-//			System.out.println(modulo.tamanio());
-//		}
-//
-//	});
-//	
-//	vBoxAlgoritmo.getChildren().add(boton);
-//	System.out.println(modulo.tamanio());
 
 }
