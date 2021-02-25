@@ -6,6 +6,10 @@ import edu.fiuba.algo3.modelo.Posicion;
 
 public class BloqueMovIzquierda extends Bloque {
 
+	public BloqueMovIzquierda() {
+		nombre = "bloque_mov_izquierda";
+	}
+	
     public void ejecutar(Personaje personaje, Dibujo dibujo) {
         personaje.mover(new Posicion(-1,0), dibujo);
     }

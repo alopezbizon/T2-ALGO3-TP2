@@ -48,6 +48,8 @@ public class ControladorPanelAlgoritmo implements Initializable {
 		System.out.println("agregando bloque");
 		listAlgoritmo.getItems().clear();
 		listAlgoritmo.getItems().addAll(moduloAlgoritmo.getBloques());
+		listAlgoritmo.setCellFactory(bloqueAgregado -> new BloqueCell(this));
+		
 	}
 	
 	

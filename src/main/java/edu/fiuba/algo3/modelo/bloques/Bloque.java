@@ -6,6 +6,10 @@ import edu.fiuba.algo3.modelo.Personaje;
 public abstract class Bloque {
 	
 	protected String nombre;
+	
+	public Bloque() {
+		nombre = "sin_imagen";
+	}
 
     public abstract void ejecutar(Personaje personaje, Dibujo dibujo);
     public abstract void ejecutarInversa(Personaje personaje, Dibujo dibujo);
