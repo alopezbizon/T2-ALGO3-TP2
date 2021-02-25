@@ -48,10 +48,15 @@ public class ControladorPanelDibujo implements Initializable {
     private void inicializarEventos() {
     	EventosBloque eventos = moduloAlgoritmo.getEventos();
 		eventos.getOnDibujar().getCallbacks().add(Tramos -> Platform.runLater(() -> onDibujar(Tramos)));
+		eventos.getOnReiniciar().getCallbacks().add(S -> Platform.runLater(() -> onReiniciar(S)));
 		
 	}
     
-    private void  onDibujar(List<Tramo> tramos) {
+    private void onReiniciar(String s) {
+		borrarDibujo();
+	}
+
+	private void  onDibujar(List<Tramo> tramos) {
     	for(Tramo tramo: tramos) {
     		pintarTramo(tramo);
     	}    	

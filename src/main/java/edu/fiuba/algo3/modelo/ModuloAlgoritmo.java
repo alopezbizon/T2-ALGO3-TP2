@@ -115,7 +115,9 @@ public class ModuloAlgoritmo {
 
 	public void reiniciarAlgoritmo() {
 		this.bloques = new ArrayList<>();
-		// TODO: evento y notificación.
+		this.dibujo = new Dibujo();
+		this.personaje = new Personaje(new Posicion(0,0));
+		eventos.getOnReiniciar().notificar("");
 	}
 
 	public void guardarAlgoritmo() {

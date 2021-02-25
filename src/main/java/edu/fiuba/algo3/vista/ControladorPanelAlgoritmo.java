@@ -34,7 +34,10 @@ public class ControladorPanelAlgoritmo implements Initializable {
 		this.inicializarEventos();
 
 		buttonEjecutar.setOnAction(event -> moduloAlgoritmo.ejecutarAlgoritmo());
-		buttonReiniciar.setOnAction(event -> moduloAlgoritmo.reiniciarAlgoritmo());
+		buttonReiniciar.setOnAction(event -> {
+			moduloAlgoritmo.reiniciarAlgoritmo();
+			listAlgoritmo.getItems().clear();
+		});
 		buttonGuardar.setOnAction(event -> moduloAlgoritmo.guardarAlgoritmo());
 	}
 

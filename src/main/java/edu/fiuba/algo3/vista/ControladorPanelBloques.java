@@ -42,12 +42,7 @@ public class ControladorPanelBloques implements Initializable{
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {		
 		
-		buttonMovArriba.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent event) {
-				moduloAlgoritmo.agregarBloqueMovimientoArriba();	
-			}
-		});
+		buttonMovArriba.setOnAction(event -> moduloAlgoritmo.agregarBloqueMovimientoArriba());
 		
 		buttonMovAbajo.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
