@@ -23,7 +23,7 @@ public class BloqueCell extends ListCell<Bloque> {
 			view = null;
 		} else {
 			Image image;
-			image = new Image(getClass().getClassLoader().getResourceAsStream("\\images\\"+item.getNombreBloque()+".png"));
+			image = new Image(getClass().getClassLoader().getResourceAsStream("images/"+item.getNombreBloque()+".png"));
 			imagen.setImage(image);
 			imagen.setFitWidth(ANCHO_IMAGEN);
 			imagen.setPreserveRatio(true);

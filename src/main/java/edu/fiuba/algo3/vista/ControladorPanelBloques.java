@@ -42,62 +42,15 @@ public class ControladorPanelBloques implements Initializable{
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {		
 		
-		buttonMovArriba.setOnAction(event -> moduloAlgoritmo.agregarBloqueMovimientoArriba());
-		
-		buttonMovAbajo.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent event) {
-				moduloAlgoritmo.agregarBloqueMovimientoAbajo();	
-			}
-		});
-		
-		buttonMovDerecha.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent event) {
-				moduloAlgoritmo.agregarBloqueMovimientoDerecha();	
-			}
-		});
-		buttonMovIzquierda.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent event) {
-				moduloAlgoritmo.agregarBloqueMovimientoIzquierda();	
-			}
-		});
-		buttonLapizArriba.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent event) {
-				moduloAlgoritmo.agregarBloqueLapizArriba();	
-			}
-		});
-		buttonLapizAbajo.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent event) {
-				moduloAlgoritmo.agregarBloqueLapizAbajo();	
-			}
-		});
-		buttonRepetirDosVeces.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent event) {
-				moduloAlgoritmo.agregarBloqueRepetirDosVeces();	
-			}
-		});
-		buttonRepetirTresVeces.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent event) {
-				moduloAlgoritmo.agregarBloqueRepetirTresVeces();	
-			}
-		});
-		buttonInvertir.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent event) {
-				moduloAlgoritmo.agregarBloqueInvertir();	
-			}
-		});
-		buttonAlgoritmoGuardado.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent event) {
-				moduloAlgoritmo.agregarBloqueAlgoritmoGuardado();	
-			}
-		});		
+		buttonMovArriba.setOnAction(event -> moduloAlgoritmo.agregarBloqueMovimientoArriba());		
+		buttonMovAbajo.setOnAction(event -> moduloAlgoritmo.agregarBloqueMovimientoAbajo());		
+		buttonMovDerecha.setOnAction(event -> moduloAlgoritmo.agregarBloqueMovimientoDerecha());
+		buttonMovIzquierda.setOnAction(event -> moduloAlgoritmo.agregarBloqueMovimientoIzquierda());
+		buttonLapizArriba.setOnAction(event -> moduloAlgoritmo.agregarBloqueLapizArriba());
+		buttonLapizAbajo.setOnAction(event -> moduloAlgoritmo.agregarBloqueLapizAbajo());
+		buttonRepetirDosVeces.setOnAction(event -> moduloAlgoritmo.agregarBloqueRepetirDosVeces());
+		buttonRepetirTresVeces.setOnAction(event -> moduloAlgoritmo.agregarBloqueRepetirTresVeces());
+		buttonInvertir.setOnAction(event -> moduloAlgoritmo.agregarBloqueInvertir());
+		buttonAlgoritmoGuardado.setOnAction(event -> moduloAlgoritmo.agregarBloqueAlgoritmoGuardado());		
 	}
 }

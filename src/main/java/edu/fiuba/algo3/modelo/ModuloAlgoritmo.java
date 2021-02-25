@@ -113,7 +113,6 @@ public class ModuloAlgoritmo {
 		
 		algoritmo.agregarBloques(bloques);
 		algoritmo.ejecutar(personaje, dibujo);	
-		System.out.println(dibujo.obtenerTramos().size());
 		eventos.getOnDibujar().notificar(dibujo.obtenerTramos());
 	}
 
