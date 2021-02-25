@@ -4,8 +4,10 @@ import edu.fiuba.algo3.modelo.Dibujo;
 import edu.fiuba.algo3.modelo.Personaje;
 
 public class BloqueAlgoritmo extends BloqueComplejo{
-	
-	private String nombre;
+		
+	public BloqueAlgoritmo() {
+		nombre = "bloque_algoritmo";
+	}
 
 	@Override
 	public void ejecutar(Personaje personaje, Dibujo dibujo) {
@@ -13,13 +15,5 @@ public class BloqueAlgoritmo extends BloqueComplejo{
 			bloque.ejecutar(personaje, dibujo);
 		});
 		
-	}
-	
-	public void inicializarNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public String obtenerNombre() {
-		return this.nombre;
 	}
 }

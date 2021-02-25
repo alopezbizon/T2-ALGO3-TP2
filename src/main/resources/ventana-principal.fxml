@@ -11,11 +11,11 @@
         <items>
             <SplitPane dividerPositions="0.5">
                <items>
-                  <Pane fx:id="panelSuperiorIzquierdo" prefHeight="200.0" prefWidth="200.0" />
-                  <Pane fx:id="panelSuperiorDerecho" prefHeight="200.0" prefWidth="200.0" />
+                  <Pane fx:id="panelSuperiorIzquierdo" />
+                  <Pane fx:id="panelSuperiorDerecho" />
                </items>
             </SplitPane>
-            <Pane fx:id="panelInferior" prefHeight="200.0" prefWidth="200.0" />
+            <Pane fx:id="panelInferior" />
         </items>
       </SplitPane>
    </center>
