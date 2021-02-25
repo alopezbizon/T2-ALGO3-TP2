@@ -9,6 +9,8 @@ import edu.fiuba.algo3.modelo.ModuloAlgoritmo;
 import edu.fiuba.algo3.modelo.Posicion;
 import edu.fiuba.algo3.modelo.Tramo;
 import edu.fiuba.algo3.modelo.TramoInvalidoPosicionDeInicioYFinIgualesException;
+import edu.fiuba.algo3.modelo.eventos.EventosBloque;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
@@ -35,21 +37,27 @@ public class ControladorPanelDibujo implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+    	this.inicializarEventos();
+    	
         this.contextoGraficoDibujo = this.canvasSectorDibujo.getGraphicsContext2D();
         this.ANCHO_CANVAS = this.canvasSectorDibujo.getWidth();
         this.ALTO_CANVAS = this.canvasSectorDibujo.getHeight();
-        this.inicializarPosiciones();
-        
-        try {
-			pintarTramo(new Tramo(new Posicion(2,0), new Posicion(0,1)));
-			
-		} catch (TramoInvalidoPosicionDeInicioYFinIgualesException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+        this.inicializarPosiciones();        
     }
 
-    private void inicializarPosiciones() {
+    private void inicializarEventos() {
+    	EventosBloque eventos = moduloAlgoritmo.getEventos();
+		eventos.getOnDibujar().getCallbacks().add(Tramos -> Platform.runLater(() -> onDibujar(Tramos)));
+		
+	}
+    
+    private void  onDibujar(List<Tramo> tramos) {
+    	for(Tramo tramo: tramos) {
+    		pintarTramo(tramo);
+    	}    	
+    }
+
+	private void inicializarPosiciones() {
         this.posiciones = new ArrayList<Posicion>();
 
         int ancho = (int) this.ANCHO_CANVAS / LARGO_LINEA;

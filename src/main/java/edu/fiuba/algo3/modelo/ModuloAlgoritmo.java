@@ -22,6 +22,9 @@ public class ModuloAlgoritmo {
 	private ArrayList<Bloque> bloques = new ArrayList<Bloque>();
 	private EventosBloque eventos = new EventosBloque();
 	
+	private Personaje personaje = new Personaje(new Posicion(0,0));
+	private Dibujo dibujo = new Dibujo();
+	
 	public EventosBloque getEventos() {
 		return eventos;
 	}
@@ -104,7 +107,10 @@ public class ModuloAlgoritmo {
 	}
 
 	public void ejecutarAlgoritmo() {
-		// TODO: lógica, evento y notificación.
+		BloqueAlgoritmo algoritmo = new BloqueAlgoritmo();
+		algoritmo.agregarBloques(bloques);
+		algoritmo.ejecutar(personaje, dibujo);		
+		eventos.getOnDibujar().notificar(dibujo.obtenerTramos());
 	}
 
 	public void reiniciarAlgoritmo() {
