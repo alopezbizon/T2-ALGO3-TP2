@@ -20,6 +20,7 @@ public class ControladorPanelDibujo implements Initializable {
     private double ANCHO_CANVAS;
     private double ALTO_CANVAS;
     private static final int LARGO_LINEA = 40;
+    private static final int AJUSTE_SIGNO = -1;
 
     @FXML
     private Canvas canvasSectorDibujo;
@@ -65,11 +66,12 @@ public class ControladorPanelDibujo implements Initializable {
         double offset_x = ANCHO_CANVAS/2;
         double offset_y = ALTO_CANVAS/2;
 
+        // Al Se ajusta el signo de 'y' para que no dibuje en espejo.
         contextoGraficoDibujo.strokeLine(
         		offset_x + inicio.obtenerX() * LARGO_LINEA,
-        		offset_y + inicio.obtenerY() * LARGO_LINEA,
+        		offset_y + inicio.obtenerY() * LARGO_LINEA * AJUSTE_SIGNO,
                 offset_x + fin.obtenerX() * LARGO_LINEA,
-                offset_y + fin.obtenerY() * LARGO_LINEA
+                offset_y + fin.obtenerY() * LARGO_LINEA * AJUSTE_SIGNO
         );
     }
 
