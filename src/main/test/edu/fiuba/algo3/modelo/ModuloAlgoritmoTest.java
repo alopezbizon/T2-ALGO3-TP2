@@ -1,12 +1,12 @@
 package edu.fiuba.algo3.modelo;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 import edu.fiuba.algo3.modelo.bloques.BloqueMovAbajo;
 import edu.fiuba.algo3.modelo.bloques.BloqueMovArriba;
+
 
 public class ModuloAlgoritmoTest {
 	
@@ -19,23 +19,18 @@ public class ModuloAlgoritmoTest {
 	
 	@Test
 	public void crearModuloVacio() {
-		assertTrue(modulo.estaVacio());
+		assertTrue(modulo.isEmpty());
 	}
 	
 	@Test
 	public void agregarBloqueMovimientoArriba() {
-		
 		modulo.agregarBloqueMovimientoArriba();
-		
-		assertTrue(modulo.getBloques().iterator().next().getClass() == BloqueMovArriba.class);		
+		assertEquals(modulo.getBloques().iterator().next().getClass(), BloqueMovArriba.class);
 	}
 	
 	@Test
 	public void agregarBloqueMovimientoAbajo() {
-		
 		modulo.agregarBloqueMovimientoAbajo();
-		
-		assertTrue(modulo.getBloques().iterator().next().getClass() == BloqueMovAbajo.class);		
+		assertEquals(modulo.getBloques().iterator().next().getClass(), BloqueMovAbajo.class);
 	}
-
 }

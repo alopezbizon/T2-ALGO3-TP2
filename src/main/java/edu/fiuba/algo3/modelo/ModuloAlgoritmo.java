@@ -19,8 +19,8 @@ import edu.fiuba.algo3.modelo.eventos.EventosBloque;
 
 public class ModuloAlgoritmo {
 	
-	private ArrayList<Bloque> bloques = new ArrayList<Bloque>();
-	private EventosBloque eventos = new EventosBloque();
+	private ArrayList<Bloque> bloques = new ArrayList<>();
+	private final EventosBloque eventos = new EventosBloque();
 	
 	private BloqueAlgoritmo algoritmoGuardado = new BloqueAlgoritmo();
 	
@@ -31,80 +31,65 @@ public class ModuloAlgoritmo {
 		return eventos;
 	}
 
-	public boolean estaVacio() {
+	public boolean isEmpty() {
 		return bloques.isEmpty();
 	}
 	
-	public int tamanio() {
+	public int size() {
 		return bloques.size();
 	}
 
 	public void eliminarUltimoBloque() {
 		bloques.remove(bloques.size()-1);
-		
-	}
-
-	public void agregarBloqueMovimientoArriba() {
-		Bloque bloque = new BloqueMovArriba();
-		bloques.add(bloque);
-		eventos.getOnAgregarBloque().notificar(bloque);
 	}
 
 	public Collection getBloques() {
 		return bloques;
 	}
 
-	public void agregarBloqueMovimientoAbajo() {
-		Bloque bloque = new BloqueMovAbajo();
+	private void agregarBloque(Bloque bloque) {
 		bloques.add(bloque);
-		eventos.getOnAgregarBloque().notificar(bloque);			
+		eventos.getOnAgregarBloque().notificar(bloque);
+	}
+
+	public void agregarBloqueMovimientoArriba() {
+		this.agregarBloque(new BloqueMovArriba());
+	}
+
+	public void agregarBloqueMovimientoAbajo() {
+		this.agregarBloque(new BloqueMovAbajo());
 	}	
 
 	public void agregarBloqueMovimientoDerecha() {
-		Bloque bloque = new BloqueMovDerecha();
-		bloques.add(bloque);
-		eventos.getOnAgregarBloque().notificar(bloque);		
+		this.agregarBloque(new BloqueMovDerecha());
 	}
 	
 	public void agregarBloqueMovimientoIzquierda() {
-		Bloque bloque = new BloqueMovIzquierda();
-		bloques.add(bloque);
-		eventos.getOnAgregarBloque().notificar(bloque);		
+		this.agregarBloque(new BloqueMovIzquierda());
 	}
 
 	public void agregarBloqueLapizArriba() {
-		Bloque bloque = new BloqueSubirLapiz();
-		bloques.add(bloque);
-		eventos.getOnAgregarBloque().notificar(bloque);
+		this.agregarBloque(new BloqueSubirLapiz());
 	}
 	
 	public void agregarBloqueLapizAbajo() {
-		Bloque bloque = new BloqueBajarLapiz();
-		bloques.add(bloque);
-		eventos.getOnAgregarBloque().notificar(bloque);
+		this.agregarBloque(new BloqueBajarLapiz());
 	}
 
 	public void agregarBloqueRepetirDosVeces() {
-		Bloque bloque = new BloqueRepetirDosVeces();
-		bloques.add(bloque);
-		eventos.getOnAgregarBloque().notificar(bloque);
+		this.agregarBloque(new BloqueRepetirDosVeces());
 	}
 	
 	public void agregarBloqueRepetirTresVeces() {
-		Bloque bloque = new BloqueRepetirTresVeces();
-		bloques.add(bloque);
-		eventos.getOnAgregarBloque().notificar(bloque);
+		this.agregarBloque(new BloqueRepetirTresVeces());
 	}
 
 	public void agregarBloqueInvertir() {
-		Bloque bloque = new BloqueInversor();
-		bloques.add(bloque);
-		eventos.getOnAgregarBloque().notificar(bloque);
+		this.agregarBloque(new BloqueInversor());
 	}
 
 	public void agregarBloqueAlgoritmoGuardado() {
-		bloques.add(algoritmoGuardado);
-		eventos.getOnAgregarBloque().notificar(algoritmoGuardado);
+		this.agregarBloque(algoritmoGuardado);
 	}
 
 	public void ejecutarAlgoritmo() {

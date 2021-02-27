@@ -6,9 +6,10 @@ import java.util.Collection;
 import edu.fiuba.algo3.modelo.Dibujo;
 import edu.fiuba.algo3.modelo.Personaje;
 
+
 public abstract class BloqueComplejo extends Bloque{
 
-	protected Collection<Bloque> bloques = new ArrayList<Bloque>();
+	protected Collection<Bloque> bloques = new ArrayList<>();
 
 	public void agregarBloque(Bloque unBloque) {
 		bloques.add(unBloque);
@@ -17,11 +18,5 @@ public abstract class BloqueComplejo extends Bloque{
 	@Override
 	public void ejecutarInversa(Personaje personaje, Dibujo dibujo) {
 		this.ejecutar(personaje, dibujo);
-		
 	}
-	
-	public int tamanio() {
-		return bloques.size();
-	}
-
 }
