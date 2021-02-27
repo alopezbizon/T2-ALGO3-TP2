@@ -3,16 +3,26 @@ package edu.fiuba.algo3.modelo;
 
 public class Posicion {
 
-    private Integer x;
-    private Integer y;
+    private int x;
+    private int y;
 
-    public Posicion(Integer x, Integer y) {
+    public Posicion(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
-    public boolean equals(Posicion posicion) {
-        return (this.x.equals(posicion.x) && this.y.equals(posicion.y));
+    @Override
+    public boolean equals(Object objeto) {
+        if (!(objeto instanceof Posicion)) {
+            return false;
+        }
+        if (objeto == this) {
+            return true;
+        }
+
+        Posicion posicion = (Posicion) objeto;
+        return ((this.obtenerX() == posicion.obtenerX()) &&
+                (this.obtenerY() == posicion.obtenerY()));
     }
 
     public void sumar(Posicion posicion) {
@@ -24,11 +34,11 @@ public class Posicion {
         return new Posicion(this.x, this.y);
     }
 
-    public Integer obtenerX() {
+    public int obtenerX() {
         return this.x;
     }
 
-    public Integer obtenerY() {
+    public int obtenerY() {
         return this.y;
     }
 }
