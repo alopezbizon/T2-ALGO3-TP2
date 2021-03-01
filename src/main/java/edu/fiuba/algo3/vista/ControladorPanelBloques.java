@@ -7,8 +7,12 @@ import edu.fiuba.algo3.modelo.ModuloAlgoritmo;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class ControladorPanelBloques implements Initializable{
+	
+	private static final int ANCHO_IMAGEN = 30;
 	
 	@FXML
 	private Button buttonMovArriba;
@@ -38,8 +42,33 @@ public class ControladorPanelBloques implements Initializable{
 	}
 
 	@Override
-	public void initialize(URL location, ResourceBundle resources) {		
+	public void initialize(URL location, ResourceBundle resources) {				
+		inicializarEventosBotones();
+		inicializarImagenesBotones();			
+	}
+
+	private void inicializarImagenesBotones() {
+		buttonLapizAbajo.setGraphic(generarImagen("bloque_bajar_lapiz"));
+		buttonLapizArriba.setGraphic(generarImagen("bloque_subir_lapiz"));
+		buttonMovAbajo.setGraphic(generarImagen("bloque_mov_abajo"));
+		buttonMovArriba.setGraphic(generarImagen("bloque_mov_arriba"));
+		buttonMovDerecha.setGraphic(generarImagen("bloque_mov_derecha"));
+		buttonMovIzquierda.setGraphic(generarImagen("bloque_mov_izquierda"));
 		
+		
+	}
+
+	private ImageView generarImagen(String nombreImagen) {
+		ImageView imagen = new ImageView();
+		Image image = new Image(getClass().getClassLoader().getResourceAsStream("images/"+nombreImagen+".png"));
+		imagen.setImage(image);
+		imagen.setFitWidth(ANCHO_IMAGEN);
+		imagen.setPreserveRatio(true);
+		return imagen;
+		
+	}
+
+	private void inicializarEventosBotones() {
 		buttonMovArriba.setOnAction(event -> moduloAlgoritmo.agregarBloqueMovimientoArriba());		
 		buttonMovAbajo.setOnAction(event -> moduloAlgoritmo.agregarBloqueMovimientoAbajo());		
 		buttonMovDerecha.setOnAction(event -> moduloAlgoritmo.agregarBloqueMovimientoDerecha());
@@ -49,6 +78,7 @@ public class ControladorPanelBloques implements Initializable{
 		buttonRepetirDosVeces.setOnAction(event -> moduloAlgoritmo.agregarBloqueRepetirDosVeces());
 		buttonRepetirTresVeces.setOnAction(event -> moduloAlgoritmo.agregarBloqueRepetirTresVeces());
 		buttonInvertir.setOnAction(event -> moduloAlgoritmo.agregarBloqueInvertir());
-		buttonAlgoritmoGuardado.setOnAction(event -> moduloAlgoritmo.agregarBloqueAlgoritmoGuardado());		
+		buttonAlgoritmoGuardado.setOnAction(event -> moduloAlgoritmo.agregarBloqueAlgoritmoGuardado());	
+		
 	}
 }
