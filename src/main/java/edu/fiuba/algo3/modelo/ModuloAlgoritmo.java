@@ -1,7 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Stack;
 
 import edu.fiuba.algo3.modelo.bloques.Bloque;
@@ -24,7 +23,7 @@ public class ModuloAlgoritmo {
 	private ArrayList<Bloque> bloques = new ArrayList<>();
 	private final EventosBloque eventos = new EventosBloque();
 	
-	private Stack<BloqueComplejo> pilaBloquesComplejos = new Stack();
+	private Stack<BloqueComplejo> pilaBloquesComplejos = new Stack<BloqueComplejo>();
 	
 	private BloqueAlgoritmo algoritmoGuardado = new BloqueAlgoritmo();
 	
@@ -43,10 +42,6 @@ public class ModuloAlgoritmo {
 		return bloques.size();
 	}
 
-	public Collection getBloques() {
-		return bloques;
-	}
-
 	private void agregarBloque(Bloque bloque) {
 		if(!pilaBloquesComplejos.isEmpty()) {
 			BloqueComplejo bloqueComplejo = pilaBloquesComplejos.pop();
@@ -57,17 +52,12 @@ public class ModuloAlgoritmo {
 			bloques.add(bloque);
 		}
 		
-		eventos.getOnAgregarBloque().notificar(bloque);
-		
-//		System.out.println("cant bloques: "+ bloques.size());
+		eventos.getOnAgregarBloque().notificar(bloque);		
 	}
 	
 	private void agregarBloqueComplejo(BloqueComplejo bloqueComplejo) {
 		agregarBloque(bloqueComplejo);
-		pilaBloquesComplejos.push(bloqueComplejo);	
-		System.out.println("cant complejos: "+ pilaBloquesComplejos.size());
-		System.out.println("cant bloques: "+ bloques.size());
-		
+		pilaBloquesComplejos.push(bloqueComplejo);			
 	}
 
 	public void agregarBloqueMovimientoArriba() {
@@ -116,14 +106,13 @@ public class ModuloAlgoritmo {
 		
 		algoritmo.agregarBloques(bloques);
 		algoritmo.ejecutar(personaje, dibujo);	
-		System.out.println("cant tramos: "+dibujo.obtenerTramos().size());
 		eventos.getOnDibujar().notificar(dibujo.obtenerTramos());
 	}
 
 	public void reiniciarAlgoritmo() {
 		reiniciarPersonajeYDibujo();
 		this.bloques = new ArrayList<>();
-		this.pilaBloquesComplejos = new Stack();
+		this.pilaBloquesComplejos = new Stack<BloqueComplejo>();
 		eventos.getOnReiniciar().notificar("");
 	}
 
@@ -140,7 +129,6 @@ public class ModuloAlgoritmo {
 	public void noAgregaMas() {
 		if (pilaBloquesComplejos.isEmpty()) return;
 		
-		System.out.println("habia cant bloques complejos: "+ pilaBloquesComplejos.size());
 		pilaBloquesComplejos.pop();		
 	}
 

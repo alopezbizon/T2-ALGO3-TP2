@@ -22,15 +22,4 @@ public class ModuloAlgoritmoTest {
 		assertTrue(modulo.isEmpty());
 	}
 	
-	@Test
-	public void agregarBloqueMovimientoArriba() {
-		modulo.agregarBloqueMovimientoArriba();
-		assertEquals(modulo.getBloques().iterator().next().getClass(), BloqueMovArriba.class);
-	}
-	
-	@Test
-	public void agregarBloqueMovimientoAbajo() {
-		modulo.agregarBloqueMovimientoAbajo();
-		assertEquals(modulo.getBloques().iterator().next().getClass(), BloqueMovAbajo.class);
-	}
 }
