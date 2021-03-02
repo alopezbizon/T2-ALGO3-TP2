@@ -12,7 +12,7 @@ import javafx.scene.image.ImageView;
 
 public class ControladorPanelBloques implements Initializable{
 	
-	private static final int ANCHO_IMAGEN = 35;
+	private static final int ANCHO_IMAGEN = 30;
 	
 	@FXML
 	private Button buttonMovArriba;
@@ -57,8 +57,9 @@ public class ControladorPanelBloques implements Initializable{
 		buttonMovDerecha.setGraphic(generarImagen("bloque_mov_derecha"));
 		buttonMovIzquierda.setGraphic(generarImagen("bloque_mov_izquierda"));
 		buttonAlgoritmoGuardado.setGraphic(generarImagen("bloque_algoritmo"));
-		
-		
+		buttonRepetirDosVeces.setGraphic(generarImagen("bloque_repetir_dos_veces"));
+		buttonRepetirTresVeces.setGraphic(generarImagen("bloque_repetir_tres_veces"));
+		buttonInvertir.setGraphic(generarImagen("bloque_inversor"));			
 	}
 
 	private ImageView generarImagen(String nombreImagen) {

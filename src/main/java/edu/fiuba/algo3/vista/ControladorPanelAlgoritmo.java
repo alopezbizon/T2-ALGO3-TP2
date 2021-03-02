@@ -10,6 +10,7 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 
 public class ControladorPanelAlgoritmo implements Initializable {
@@ -21,10 +22,12 @@ public class ControladorPanelAlgoritmo implements Initializable {
 	@FXML
 	private Button buttonGuardar;
 	@FXML
-	private ListView listAlgoritmo;	
-	
+	private ListView listAlgoritmo;
+	@FXML
+	private Label labelInformacion;
+
 	private ModuloAlgoritmo moduloAlgoritmo;
-	
+
 	public ControladorPanelAlgoritmo(ModuloAlgoritmo moduloAlgoritmo) {
 		this.moduloAlgoritmo = moduloAlgoritmo;
 	}
@@ -37,19 +40,40 @@ public class ControladorPanelAlgoritmo implements Initializable {
 		buttonReiniciar.setOnAction(event -> {
 			moduloAlgoritmo.reiniciarAlgoritmo();
 			listAlgoritmo.getItems().clear();
+			reiniciarLabelInformacion();
 		});
 		buttonGuardar.setOnAction(event -> moduloAlgoritmo.guardarAlgoritmo());
-		
+
 		listAlgoritmo.setCellFactory(bloqueAgregado -> new BloqueCell());
+
+		reiniciarLabelInformacion();
 	}
+
+	
 
 	private void inicializarEventos() {
 		EventosBloque eventos = moduloAlgoritmo.getEventos();
 		eventos.getOnAgregarBloque().getCallbacks().add(B -> Platform.runLater(() -> onAgregarBloque(B)));
+		eventos.getOnNoAgregarMas().getCallbacks().add(S -> Platform.runLater(() -> onNoAgregarMasBloques(S)));
+	}
+
+	private void onNoAgregarMasBloques(String s) {
+		if (s != null)
+			labelInformacion.setText("agregar a bloque: " + s);
+
+		else
+			reiniciarLabelInformacion();
 	}
 
 	private void onAgregarBloque(Bloque bloque) {
-		listAlgoritmo.getItems().add(bloque);	
+		listAlgoritmo.getItems().add(bloque);
+		if (moduloAlgoritmo.hayComplejoActivo())
+			labelInformacion.setText("agregando a bloque: " + moduloAlgoritmo.getNombreUltimoComplejo());
+	}
+	
+	private void reiniciarLabelInformacion() {
+		labelInformacion.setText("agregar bloque...");
+		
 	}
 
 }

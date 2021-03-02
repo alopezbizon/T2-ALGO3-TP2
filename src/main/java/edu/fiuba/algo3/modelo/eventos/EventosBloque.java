@@ -10,6 +10,7 @@ public class EventosBloque {
 	private Evento<Bloque> onAgregarBloque = new Evento<>();
 	private Evento<List<Tramo>> onDibujar = new Evento<>();
 	private Evento<String> onReiniciar = new Evento<>();
+	private Evento<String> onNoAgregarMas = new Evento<>();
 
 	public Evento<Bloque> getOnAgregarBloque() {
 		return onAgregarBloque;
@@ -20,8 +21,11 @@ public class EventosBloque {
 	}
 
 	public Evento<String> getOnReiniciar() {
-		return onReiniciar;
-		
+		return onReiniciar;		
+	}
+
+	public Evento<String> getOnNoAgregarMas() {
+		return onNoAgregarMas;
 	}
 
 }

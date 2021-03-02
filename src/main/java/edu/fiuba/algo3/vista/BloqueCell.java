@@ -8,7 +8,7 @@ import javafx.scene.image.ImageView;
 
 public class BloqueCell extends ListCell<Bloque> {
 
-	private static final int ANCHO_IMAGEN = 25;
+	private static final int ANCHO_IMAGEN = 40;
 	
 	private Node view;
 	

@@ -129,7 +129,26 @@ public class ModuloAlgoritmo {
 	public void noAgregaMas() {
 		if (pilaBloquesComplejos.isEmpty()) return;
 		
-		pilaBloquesComplejos.pop();		
+		pilaBloquesComplejos.pop();
+		
+		if(this.hayComplejoActivo())
+			eventos.getOnNoAgregarMas().notificar(getNombreUltimoComplejo());
+		else
+			eventos.getOnNoAgregarMas().notificar(null);
+	}
+
+	public boolean hayComplejoActivo() {
+		if (pilaBloquesComplejos.size() == 0)
+			return false;
+		
+		return true;
+	}
+
+	public String getNombreUltimoComplejo() {
+		BloqueComplejo bloque = pilaBloquesComplejos.pop();
+		String nombre = bloque.getNombreBloque();
+		pilaBloquesComplejos.push(bloque);
+		return nombre;		
 	}
 
 }

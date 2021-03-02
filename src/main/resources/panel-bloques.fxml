@@ -6,7 +6,7 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <GridPane>
+      <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -26,10 +26,10 @@
             <Button fx:id="buttonMovIzquierda" mnemonicParsing="false" />
             <Button fx:id="buttonLapizArriba" mnemonicParsing="false" GridPane.rowIndex="1" />
             <Button fx:id="buttonLapizAbajo" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button fx:id="buttonRepetirDosVeces" mnemonicParsing="false" text="repetir 2 veces" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Button fx:id="buttonRepetirTresVeces" mnemonicParsing="false" text="repetir 3 veces" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <Button fx:id="buttonInvertir" mnemonicParsing="false" text="invertir" GridPane.rowIndex="2" />
-            <Button fx:id="buttonAlgoritmoGuardado" mnemonicParsing="false" text="algoritmo" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button fx:id="buttonRepetirDosVeces" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button fx:id="buttonRepetirTresVeces" mnemonicParsing="false" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Button fx:id="buttonInvertir" mnemonicParsing="false" GridPane.rowIndex="2" />
+            <Button fx:id="buttonAlgoritmoGuardado" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Button fx:id="buttonNoAgregarMas" mnemonicParsing="false" text="no agregar mas" GridPane.columnIndex="3" GridPane.rowIndex="3" />
          </children>
       </GridPane>
