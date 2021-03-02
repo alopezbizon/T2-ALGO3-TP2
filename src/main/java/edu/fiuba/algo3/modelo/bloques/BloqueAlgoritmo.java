@@ -7,7 +7,7 @@ import edu.fiuba.algo3.modelo.Personaje;
 
 public class BloqueAlgoritmo extends BloqueComplejo{
 		
-	public void BloqueAlgoritmo() {
+	public BloqueAlgoritmo() {
 		nombre = "bloque_algoritmo";
 	}
 	
