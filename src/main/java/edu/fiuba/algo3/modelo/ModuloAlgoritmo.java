@@ -2,10 +2,12 @@ package edu.fiuba.algo3.modelo;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Stack;
 
 import edu.fiuba.algo3.modelo.bloques.Bloque;
 import edu.fiuba.algo3.modelo.bloques.BloqueAlgoritmo;
 import edu.fiuba.algo3.modelo.bloques.BloqueBajarLapiz;
+import edu.fiuba.algo3.modelo.bloques.BloqueComplejo;
 import edu.fiuba.algo3.modelo.bloques.BloqueInversor;
 import edu.fiuba.algo3.modelo.bloques.BloqueMovAbajo;
 import edu.fiuba.algo3.modelo.bloques.BloqueMovArriba;
@@ -21,6 +23,8 @@ public class ModuloAlgoritmo {
 	
 	private ArrayList<Bloque> bloques = new ArrayList<>();
 	private final EventosBloque eventos = new EventosBloque();
+	
+	private Stack<BloqueComplejo> pilaBloquesComplejos = new Stack();
 	
 	private BloqueAlgoritmo algoritmoGuardado = new BloqueAlgoritmo();
 	
@@ -39,17 +43,31 @@ public class ModuloAlgoritmo {
 		return bloques.size();
 	}
 
-	public void eliminarUltimoBloque() {
-		bloques.remove(bloques.size()-1);
-	}
-
 	public Collection getBloques() {
 		return bloques;
 	}
 
 	private void agregarBloque(Bloque bloque) {
-		bloques.add(bloque);
+		if(!pilaBloquesComplejos.isEmpty()) {
+			BloqueComplejo bloqueComplejo = pilaBloquesComplejos.pop();
+			bloqueComplejo.agregarBloque(bloque);
+			pilaBloquesComplejos.push(bloqueComplejo);
+		}else
+		{
+			bloques.add(bloque);
+		}
+		
 		eventos.getOnAgregarBloque().notificar(bloque);
+		
+//		System.out.println("cant bloques: "+ bloques.size());
+	}
+	
+	private void agregarBloqueComplejo(BloqueComplejo bloqueComplejo) {
+		agregarBloque(bloqueComplejo);
+		pilaBloquesComplejos.push(bloqueComplejo);	
+		System.out.println("cant complejos: "+ pilaBloquesComplejos.size());
+		System.out.println("cant bloques: "+ bloques.size());
+		
 	}
 
 	public void agregarBloqueMovimientoArriba() {
@@ -74,18 +92,18 @@ public class ModuloAlgoritmo {
 	
 	public void agregarBloqueLapizAbajo() {
 		this.agregarBloque(new BloqueBajarLapiz());
-	}
+	}	
 
 	public void agregarBloqueRepetirDosVeces() {
-		this.agregarBloque(new BloqueRepetirDosVeces());
+		this.agregarBloqueComplejo(new BloqueRepetirDosVeces());		
 	}
 	
 	public void agregarBloqueRepetirTresVeces() {
-		this.agregarBloque(new BloqueRepetirTresVeces());
+		this.agregarBloqueComplejo(new BloqueRepetirTresVeces());
 	}
 
 	public void agregarBloqueInvertir() {
-		this.agregarBloque(new BloqueInversor());
+		this.agregarBloqueComplejo(new BloqueInversor());
 	}
 
 	public void agregarBloqueAlgoritmoGuardado() {
@@ -98,12 +116,14 @@ public class ModuloAlgoritmo {
 		
 		algoritmo.agregarBloques(bloques);
 		algoritmo.ejecutar(personaje, dibujo);	
+		System.out.println("cant tramos: "+dibujo.obtenerTramos().size());
 		eventos.getOnDibujar().notificar(dibujo.obtenerTramos());
 	}
 
 	public void reiniciarAlgoritmo() {
 		reiniciarPersonajeYDibujo();
-		this.bloques = new ArrayList<>();		
+		this.bloques = new ArrayList<>();
+		this.pilaBloquesComplejos = new Stack();
 		eventos.getOnReiniciar().notificar("");
 	}
 
@@ -116,4 +136,12 @@ public class ModuloAlgoritmo {
 		dibujo = new Dibujo();
 		personaje = new Personaje(new Posicion(0,0));		
 	}
+
+	public void noAgregaMas() {
+		if (pilaBloquesComplejos.isEmpty()) return;
+		
+		System.out.println("habia cant bloques complejos: "+ pilaBloquesComplejos.size());
+		pilaBloquesComplejos.pop();		
+	}
+
 }

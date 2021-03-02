@@ -39,6 +39,8 @@ public class ControladorPanelAlgoritmo implements Initializable {
 			listAlgoritmo.getItems().clear();
 		});
 		buttonGuardar.setOnAction(event -> moduloAlgoritmo.guardarAlgoritmo());
+		
+		listAlgoritmo.setCellFactory(bloqueAgregado -> new BloqueCell());
 	}
 
 	private void inicializarEventos() {
@@ -47,9 +49,7 @@ public class ControladorPanelAlgoritmo implements Initializable {
 	}
 
 	private void onAgregarBloque(Bloque bloque) {
-		listAlgoritmo.getItems().clear();
-		listAlgoritmo.getItems().addAll(moduloAlgoritmo.getBloques());
-		listAlgoritmo.setCellFactory(bloqueAgregado -> new BloqueCell());		
+		listAlgoritmo.getItems().add(bloque);	
 	}
 
 }

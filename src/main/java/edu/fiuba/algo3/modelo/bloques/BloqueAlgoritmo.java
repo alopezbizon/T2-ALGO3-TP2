@@ -7,6 +7,10 @@ import edu.fiuba.algo3.modelo.Personaje;
 
 public class BloqueAlgoritmo extends BloqueComplejo{
 		
+	public void BloqueAlgoritmo() {
+		nombre = "bloque_algoritmo";
+	}
+	
 	@Override
 	public void ejecutar(Personaje personaje, Dibujo dibujo) {
 		bloques.forEach(bloque->{

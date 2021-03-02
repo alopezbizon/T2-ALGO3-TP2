@@ -12,7 +12,7 @@ import javafx.scene.image.ImageView;
 
 public class ControladorPanelBloques implements Initializable{
 	
-	private static final int ANCHO_IMAGEN = 30;
+	private static final int ANCHO_IMAGEN = 35;
 	
 	@FXML
 	private Button buttonMovArriba;
@@ -34,6 +34,8 @@ public class ControladorPanelBloques implements Initializable{
 	private Button buttonInvertir;
 	@FXML
 	private Button buttonAlgoritmoGuardado;
+	@FXML
+	private Button buttonNoAgregarMas;
 	
 	private ModuloAlgoritmo moduloAlgoritmo;
 
@@ -54,6 +56,7 @@ public class ControladorPanelBloques implements Initializable{
 		buttonMovArriba.setGraphic(generarImagen("bloque_mov_arriba"));
 		buttonMovDerecha.setGraphic(generarImagen("bloque_mov_derecha"));
 		buttonMovIzquierda.setGraphic(generarImagen("bloque_mov_izquierda"));
+		buttonAlgoritmoGuardado.setGraphic(generarImagen("bloque_algoritmo"));
 		
 		
 	}
@@ -79,6 +82,7 @@ public class ControladorPanelBloques implements Initializable{
 		buttonRepetirTresVeces.setOnAction(event -> moduloAlgoritmo.agregarBloqueRepetirTresVeces());
 		buttonInvertir.setOnAction(event -> moduloAlgoritmo.agregarBloqueInvertir());
 		buttonAlgoritmoGuardado.setOnAction(event -> moduloAlgoritmo.agregarBloqueAlgoritmoGuardado());	
+		buttonNoAgregarMas.setOnAction(event -> moduloAlgoritmo.noAgregaMas());
 		
 	}
 }
