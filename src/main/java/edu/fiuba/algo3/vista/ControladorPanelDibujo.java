@@ -3,13 +3,13 @@ package edu.fiuba.algo3.vista;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.concurrent.TimeUnit;
 
 import edu.fiuba.algo3.modelo.ModuloAlgoritmo;
 import edu.fiuba.algo3.modelo.Posicion;
 import edu.fiuba.algo3.modelo.Tramo;
 import edu.fiuba.algo3.modelo.eventos.EventosBloque;
 import javafx.application.Platform;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
