@@ -1,57 +1,66 @@
 @startuml
+
 Abstract Class Bloque{
-    +ejecutar(Pesonaje, Dibujo)
-    +ejecutarInversa(Personaje, Dibujo)
-}
-Abstract Class BloqueComplejo{
-    +agregarBloque(Bloque)
+    +ejecutar(Pesonaje personaje, Dibujo dibujo)
+    +ejecutarInversa(Personaje personaje, Dibujo dibujo)
 }
 
-Bloque <|-- BloqueComplejo
-Bloque ---> Personaje
+Abstract Class BloqueComplejo{
+    +agregarBloque(Bloque bloque)
+    +ejecutarInversa(Personaje personaje, Dibujo dibujo)
+}
+
+Abstract Class BloqueRepetir{
+    -cantidadRepeticiones
+    +ejecutar(Pesonaje personaje, Dibujo dibujo)
+    +ejecutarInversa(Personaje personaje, Dibujo dibujo)
+}
 
 Class Personaje{
     +subirLapiz()
     +bajarLapiz()
-    +mover(Posicion, Dibujo)
-    +obtenerPosicion()
+    +mover(Posicion posicion, Dibujo dibujo)
 }
-Personaje "1"*--"1" Lapiz
-Personaje "1"*--"1" Posicion
 
 Class Dibujo{
-    +crearTramo(posicionInicio, posicionFin)
-    +obtenerTramos():List<Tramo>
-    +contieneTramo(Tramo): boolean
+    +crearTramo(Posicion inicio, Posicion fin)
+    +contieneTramo(Tramo tramo): boolean
 }
 
 Class Tramo{
-    +obtenerInicio():Posicion
-    +obtenerFin():Posicion
     +equals(Posicion): boolean
 }
+
+Abstract Class Lapiz{
+    +pintar(Posicion inicio, Posicion fin, Dibujo dibujo)
+}
+
+Class LapizAbajo{
+    +pintar(Posicion inicio, Posicion fin, Dibujo dibujo)
+}
+
+Class LapizArriba{
+    +pintar(Posicion inicio, Posicion fin, Dibujo dibujo)
+}
+
+Class Posicion{
+    +equals(Object objeto): boolean
+    +sumar(Posicion posicion)
+    +copy(): Posicion
+}
+
+Bloque <|-- BloqueComplejo
+BloqueComplejo<|-- BloqueRepetir
+Bloque ---> Personaje
+
+Personaje "1"*--"1" Lapiz
+Personaje "1"*--"1" Posicion
 
 Tramo "1"*--"2" Posicion
 Dibujo "1"*--"0..*"Tramo
 
-Abstract Class Lapiz{
-    +pintar(posicionInicio, posicionFin, Dibujo)
-}
-Class LapizAbajo{
-    +pintar(posicionInicio, posicionFin, Dibujo)
-}
-Class LapizArriba{
-    +pintar(posicionInicio, posicionFin, Dibujo)
-}
 Lapiz <|-- LapizAbajo
 Lapiz <|-- LapizArriba
 Lapiz --> Dibujo
 
-Class Posicion{
-    -Integer:x
-    -Integer:y
-    +equals(Posicion, posicion):boolean
-    +sumar(Posicion, posicion)
-    +copiar(Posicion): Posicion
-}
 @enduml

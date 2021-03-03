@@ -1,0 +1,45 @@
+@startuml
+
+Abstract Class Bloque{
+    +ejecutar(Pesonaje personaje, Dibujo dibujo)
+    +ejecutarInversa(Personaje personaje, Dibujo dibujo)
+}
+
+Class BloqueBajarLapiz{
+    +ejecutar(Pesonaje personaje, Dibujo dibujo)
+    +ejecutarInversa(Personaje personaje, Dibujo dibujo)
+}
+
+Class BloqueSubirLapiz{
+    +ejecutar(Pesonaje personaje, Dibujo dibujo)
+    +ejecutarInversa(Personaje personaje, Dibujo dibujo)
+}
+
+Class BloqueMovAbajo{
+    +ejecutar(Pesonaje personaje, Dibujo dibujo)
+    +ejecutarInversa(Personaje personaje, Dibujo dibujo)
+}
+
+Class BloqueMovArriba{
+    +ejecutar(Pesonaje, Dibujo)
+    +ejecutarInversa(Personaje, Dibujo)
+}
+
+Class BloqueMovDerecha{
+    +ejecutar(Pesonaje personaje, Dibujo dibujo)
+    +ejecutarInversa(Personaje personaje, Dibujo dibujo)
+}
+
+Class BloqueMovIzquierda{
+    +ejecutar(Pesonaje personaje, Dibujo dibujo)
+    +ejecutarInversa(Personaje personaje, Dibujo dibujo)
+}
+
+Bloque <|-- BloqueBajarLapiz
+Bloque <|-- BloqueSubirLapiz
+Bloque <|-- BloqueMovAbajo
+Bloque <|-- BloqueMovArriba
+Bloque <|-- BloqueMovDerecha
+Bloque <|-- BloqueMovIzquierda
+
+@enduml

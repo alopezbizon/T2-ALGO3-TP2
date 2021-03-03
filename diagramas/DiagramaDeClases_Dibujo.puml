@@ -1,0 +1,39 @@
+@startuml
+
+Class Dibujo{
+    -List<Tramo>
+    +crearTramo(Posicion inicio, Posicion fin)
+    +obtenerTramos(): List<Tramo>
+    +contieneTramo(Tramo tramo): boolean
+}
+
+Class Tramo{
+    -inicio
+    -fin
+    +obtenerInicio(): Posicion
+    +obtenerFin(): Posicion
+    +equals(Posicion): boolean
+}
+
+Class Posicion{
+    - x
+    - y
+    +equals(Object objeto): boolean
+    +sumar(Posicion posicion)
+    +copy(): Posicion
+    +obtenerX(): int
+    +obtenerY(): int
+}
+
+Abstract Lapiz{}
+Abstract Bloque{}
+
+Dibujo *-- Tramo
+Tramo *-- Posicion
+Dibujo --> Posicion
+
+Personaje --> Dibujo
+Lapiz --> Dibujo
+Bloque --> Dibujo
+
+@enduml

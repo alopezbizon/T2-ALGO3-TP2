@@ -1,0 +1,37 @@
+@startuml
+
+Abstract Class Bloque{
+    +ejecutar(Pesonaje personaje, Dibujo dibujo)
+    +ejecutarInversa(Personaje personaje, Dibujo dibujo)
+}
+
+Abstract Class BloqueComplejo{
+    -bloques
+    +agregarBloque(Bloque bloque)
+    +ejecutarInversa(Personaje personaje, Dibujo dibujo)
+}
+
+Abstract Class BloqueRepetir{
+    -cantidadDeRepeticiones
+    +ejecutar(Pesonaje personaje, Dibujo dibujo)
+    +ejecutarInversa(Personaje personaje, Dibujo dibujo)
+}
+
+Class BloqueAlgoritmo{
+    +ejecutar(Pesonaje personaje, Dibujo dibujo)
+    +ejecutarInversa(Personaje personaje, Dibujo dibujo)
+    +agregarBloques(ArrayList<Bloque> bloques)
+}
+
+Class BloqueInversor{
+    +ejecutar(Pesonaje personaje, Dibujo dibujo)
+}
+
+Bloque <|-- BloqueComplejo
+BloqueComplejo <|-- BloqueAlgoritmo
+BloqueComplejo <|-- BloqueInversor
+BloqueComplejo <|-- BloqueRepetir
+BloqueRepetir <|-- BloqueRepetirDosVeces
+BloqueRepetir <|-- BloqueRepetirTresVeces
+
+@enduml

@@ -1,0 +1,24 @@
+@startuml
+
+Abstract Class Bloque{}
+Abstract Class BloqueComplejo{}
+Abstract Class BloqueRepetir{}
+
+Bloque <|-- BloqueComplejo
+BloqueComplejo <|-- BloqueAlgoritmo
+BloqueComplejo <|-- BloqueInversor
+BloqueComplejo <|-- BloqueRepetir
+BloqueRepetir <|-- BloqueRepetirDosVeces
+BloqueRepetir <|-- BloqueRepetirTresVeces
+
+Bloque <|-- BloqueBajarLapiz
+Bloque <|-- BloqueSubirLapiz
+Bloque <|-- BloqueMovAbajo
+Bloque <|-- BloqueMovArriba
+Bloque <|-- BloqueMovDerecha
+Bloque <|-- BloqueMovIzquierda
+
+Dibujo <-- Bloque
+Personaje <-- Bloque
+
+@enduml

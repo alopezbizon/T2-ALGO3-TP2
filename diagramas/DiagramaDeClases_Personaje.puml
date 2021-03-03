@@ -1,0 +1,23 @@
+@startuml
+
+Class Personaje{
+    -posicion
+    -lapiz
+    +subirLapiz()
+    +bajarLapiz()
+    +mover(Posicion posicion, Dibujo dibujo)
+    +obtenerPosicion(): Posicion
+}
+
+Abstract Class Bloque{}
+Abstract Class Lapiz{}
+
+Bloque ---> Personaje
+
+Personaje *-- Lapiz
+Personaje *-- Posicion
+
+Lapiz <|-- LapizAbajo
+Lapiz <|-- LapizArriba
+
+@enduml

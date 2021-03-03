@@ -1,0 +1,22 @@
+@startuml
+
+Abstract Class Lapiz{
+    +pintar(Posicion inicio, Posicion fin, Dibujo dibujo)
+}
+
+Class LapizAbajo{
+    +pintar(Posicion inicio, Posicion fin, Dibujo dibujo)
+}
+
+Class LapizArriba{
+    +pintar(Posicion inicio, Posicion fin, Dibujo dibujo)
+}
+
+Lapiz <|-- LapizAbajo
+Lapiz <|-- LapizArriba
+
+Personaje *-- Lapiz
+Posicion <-- Lapiz
+Dibujo <-- Lapiz
+
+@enduml
