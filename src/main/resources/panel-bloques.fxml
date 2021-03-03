@@ -30,7 +30,7 @@
             <Button fx:id="buttonRepetirTresVeces" mnemonicParsing="false" GridPane.columnIndex="3" GridPane.rowIndex="1" />
             <Button fx:id="buttonInvertir" mnemonicParsing="false" GridPane.rowIndex="2" />
             <Button fx:id="buttonAlgoritmoGuardado" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Button fx:id="buttonNoAgregarMas" mnemonicParsing="false" text="no agregar mas" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Button fx:id="buttonNoAgregarMas" mnemonicParsing="false" text="Stop Agregar" GridPane.columnIndex="3" GridPane.rowIndex="3" />
          </children>
       </GridPane>
    </children>
