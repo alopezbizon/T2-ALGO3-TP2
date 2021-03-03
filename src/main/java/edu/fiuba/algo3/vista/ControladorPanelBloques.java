@@ -12,7 +12,7 @@ import javafx.scene.image.ImageView;
 
 public class ControladorPanelBloques implements Initializable{
 	
-	private static final int ANCHO_IMAGEN = 60;
+	private static final int ANCHO_IMAGEN = 90;
 	
 	@FXML
 	private Button buttonMovArriba;
@@ -67,7 +67,8 @@ public class ControladorPanelBloques implements Initializable{
 		Image image = new Image(getClass().getClassLoader().getResourceAsStream("images/"+nombreImagen+".png"));
 		imagen.setImage(image);
 		imagen.setFitWidth(ANCHO_IMAGEN);
-		imagen.setPreserveRatio(true);
+		imagen.setFitHeight(ANCHO_IMAGEN);
+//		imagen.setPreserveRatio(true);
 		return imagen;
 		
 	}
