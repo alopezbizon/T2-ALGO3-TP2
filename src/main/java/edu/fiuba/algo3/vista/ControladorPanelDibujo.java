@@ -9,10 +9,12 @@ import edu.fiuba.algo3.modelo.Posicion;
 import edu.fiuba.algo3.modelo.Tramo;
 import edu.fiuba.algo3.modelo.eventos.EventosBloque;
 import javafx.application.Platform;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.layout.AnchorPane;
 
 
 public class ControladorPanelDibujo implements Initializable {
@@ -24,6 +26,8 @@ public class ControladorPanelDibujo implements Initializable {
 
     @FXML
     private Canvas canvasSectorDibujo;
+    @FXML
+    private AnchorPane panelContenedor;
     
     private GraphicsContext contextoGraficoDibujo;
     
@@ -36,6 +40,9 @@ public class ControladorPanelDibujo implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     	this.inicializarEventos();
+    	
+    	canvasSectorDibujo.setWidth(1150);
+    	canvasSectorDibujo.setHeight(400);
     	
         this.contextoGraficoDibujo = this.canvasSectorDibujo.getGraphicsContext2D();
         this.ANCHO_CANVAS = this.canvasSectorDibujo.getWidth();

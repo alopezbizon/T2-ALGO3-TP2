@@ -12,7 +12,7 @@ import javafx.scene.image.ImageView;
 
 public class ControladorPanelBloques implements Initializable{
 	
-	private static final int ANCHO_IMAGEN = 30;
+	private static final int ANCHO_IMAGEN = 60;
 	
 	@FXML
 	private Button buttonMovArriba;

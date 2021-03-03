@@ -35,6 +35,15 @@ public class ControladorPrincipal implements Initializable {
 		panelInferior.getChildren().add(panelDibujo);
 		panelSuperiorDerecho.getChildren().add(panelAlgoritmo);
 		panelSuperiorIzquierdo.getChildren().add(panelBloques);
+		
+		panelBloques.prefWidthProperty().bind(panelSuperiorIzquierdo.widthProperty());
+		panelBloques.prefHeightProperty().bind(panelSuperiorIzquierdo.heightProperty());
+		
+		panelAlgoritmo.prefWidthProperty().bind(panelSuperiorDerecho.widthProperty());
+		panelAlgoritmo.prefHeightProperty().bind(panelSuperiorDerecho.heightProperty());
+		
+		panelDibujo.prefWidthProperty().bind(panelInferior.widthProperty());
+		panelDibujo.prefHeightProperty().bind(panelInferior.heightProperty());
 	}
 
 }

@@ -7,9 +7,13 @@
 <?import javafx.scene.canvas.Canvas?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="panelContenedor" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Canvas fx:id="canvasSectorDibujo" height="450.0" width="1200.0" AnchorPane.bottomAnchor="0.1" AnchorPane.leftAnchor="0.1" AnchorPane.rightAnchor="0.1" AnchorPane.topAnchor="0.1" />
+      <AnchorPane style="-fx-background-color: white;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Canvas fx:id="canvasSectorDibujo" AnchorPane.bottomAnchor="0.1" AnchorPane.leftAnchor="0.1" AnchorPane.rightAnchor="0.1" AnchorPane.topAnchor="0.1" />
+         </children>
+      </AnchorPane>
    </children>
    <padding>
       <Insets bottom="0.1" left="0.1" right="0.1" top="0.1" />
