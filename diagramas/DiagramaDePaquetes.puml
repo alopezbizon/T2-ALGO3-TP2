@@ -1,0 +1,41 @@
+@startuml
+package app  {
+    class App
+    class LauncherApp
+}
+
+package modelo  {
+    package bloques {}
+    package eventos {}
+    class ModuloAlgoritmo
+    class Personaje
+    class Dibujo
+}
+
+package vista  {
+    class BloqueCell
+    class ControladorPanelAlgoritmo
+    class ControladorPanelBloques
+    class ControladorPanelDibujo
+    class ControladorPrincipal
+}
+
+LauncherApp --> App
+App --> ControladorPrincipal
+
+ControladorPrincipal *-- ControladorPanelAlgoritmo
+ControladorPrincipal *-- ControladorPanelBloques
+ControladorPrincipal *-- ControladorPanelDibujo
+ControladorPanelAlgoritmo --> BloqueCell
+
+ModuloAlgoritmo <-- ControladorPanelAlgoritmo
+ModuloAlgoritmo <-- ControladorPanelBloques
+ModuloAlgoritmo <-- ControladorPanelDibujo
+
+ModuloAlgoritmo *-- Personaje
+ModuloAlgoritmo *-- Dibujo
+
+eventos <-- ModuloAlgoritmo
+bloques <-- ModuloAlgoritmo
+
+@enduml

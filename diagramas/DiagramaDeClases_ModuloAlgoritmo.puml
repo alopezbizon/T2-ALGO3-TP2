@@ -1,0 +1,41 @@
+@startuml
+
+Class ModuloAlgoritmo{
+    -bloques
+    -eventos
+    -pilaBloquesComplejos
+    -algoritmoGuardado
+    -personaje
+    -dibujo
+    +agregarBloque(Bloque bloque)
+    +agregarBloqueComplejo(BloqueComplejo bloqueComplejo)
+    +agregarBloqueMovimientoArriba()
+    +agregarBloqueMovimientoAbajo()
+    +agregarBloqueMovimientoDerecha()
+    +agregarBloqueMovimientoIzquierda()
+    +agregarBloqueLapizArriba()
+    +agregarBloqueLapizAbajo()
+    +agregarBloqueRepetirDosVeces()
+    +agregarBloqueRepetirTresVeces()
+    +agregarBloqueInvertir()
+    +agregarBloqueAlgoritmoGuardado()
+    +ejecutarAlgoritmo()
+    +reiniciarAlgoritmo()
+    +guardarAlgoritmo()
+    +reiniciarPersonajeYDibujo()
+    +noAgregaMas()
+    +hayComplejoActivo()
+    +getNombreUltimoComplejo()
+}
+
+Abstract class Bloque{}
+
+ModuloAlgoritmo "1"*--"1" Personaje
+ModuloAlgoritmo "1"*--"1" Dibujo
+ModuloAlgoritmo "1"*--"1" BloqueAlgoritmo
+ModuloAlgoritmo "1"*--"*" BloqueComplejo
+
+Bloque <-- ModuloAlgoritmo
+EventosBloque <-- ModuloAlgoritmo
+
+@enduml

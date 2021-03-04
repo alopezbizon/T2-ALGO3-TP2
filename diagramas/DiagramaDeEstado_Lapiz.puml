@@ -1,0 +1,8 @@
+@startuml
+
+[*] --> LapizArriba : \tPersonaje crea el Lapiz
+LapizArriba -> [*]
+LapizArriba --> LapizAbajo : Personaje baja el Lapiz
+LapizAbajo --> [*]
+
+@enduml
