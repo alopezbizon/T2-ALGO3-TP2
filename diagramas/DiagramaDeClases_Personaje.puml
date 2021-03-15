@@ -2,7 +2,7 @@
 
 Class Personaje{
     -posicion
-    -lapiz
+    -pintable
     +subirLapiz()
     +bajarLapiz()
     +mover(Posicion posicion, Dibujo dibujo)
@@ -10,14 +10,14 @@ Class Personaje{
 }
 
 Abstract Class Bloque{}
-Abstract Class Lapiz{}
+Interface Pintable{}
 
 Bloque ---> Personaje
 
-Personaje *-- Lapiz
+Personaje *-- Pintable
 Personaje *-- Posicion
 
-Lapiz <|-- LapizAbajo
-Lapiz <|-- LapizArriba
+Pintable <|-- LapizAbajo
+Pintable <|-- LapizArriba
 
 @enduml

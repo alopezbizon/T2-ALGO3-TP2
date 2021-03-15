@@ -12,7 +12,7 @@ public class LapizArribaTest {
         Posicion fin = new Posicion(1, 0);
         Tramo tramo = new Tramo(inicio, fin);
         Dibujo dibujo = new Dibujo();
-        LapizArriba lapiz = new LapizArriba();
+        Pintable lapiz = new LapizArriba();
 
         lapiz.pintar(inicio, fin, dibujo);
 

@@ -31,7 +31,7 @@ Class Tramo{
     +equals(Posicion): boolean
 }
 
-Abstract Class Lapiz{
+Interface Pintable{
     +pintar(Posicion inicio, Posicion fin, Dibujo dibujo)
 }
 
@@ -53,14 +53,14 @@ Bloque <|-- BloqueComplejo
 BloqueComplejo<|-- BloqueRepetir
 Bloque ---> Personaje
 
-Personaje "1"*--"1" Lapiz
+Personaje "1"*--"1" Pintable
 Personaje "1"*--"1" Posicion
 
 Tramo "1"*--"2" Posicion
 Dibujo "1"*--"0..*"Tramo
 
-Lapiz <|-- LapizAbajo
-Lapiz <|-- LapizArriba
-Lapiz --> Dibujo
+Pintable <|-- LapizAbajo
+Pintable <|-- LapizArriba
+Pintable --> Dibujo
 
 @enduml

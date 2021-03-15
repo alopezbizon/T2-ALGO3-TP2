@@ -1,6 +1,6 @@
 @startuml
 
-Abstract Class Lapiz{
+Interface Pintable{
     +pintar(Posicion inicio, Posicion fin, Dibujo dibujo)
 }
 
@@ -12,11 +12,11 @@ Class LapizArriba{
     +pintar(Posicion inicio, Posicion fin, Dibujo dibujo)
 }
 
-Lapiz <|-- LapizAbajo
-Lapiz <|-- LapizArriba
+Pintable <|-- LapizAbajo
+Pintable <|-- LapizArriba
 
-Personaje *-- Lapiz
-Posicion <-- Lapiz
-Dibujo <-- Lapiz
+Personaje *-- Pintable
+Posicion <-- Pintable
+Dibujo <-- Pintable
 
 @enduml

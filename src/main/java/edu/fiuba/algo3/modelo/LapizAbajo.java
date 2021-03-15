@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
 
-public class LapizAbajo extends Lapiz {
+public class LapizAbajo implements Pintable {
 
     public LapizAbajo() {}
 
